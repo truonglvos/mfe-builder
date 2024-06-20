@@ -1,5 +1,5 @@
-import { CONST_DATA } from '@const/const';
-import { ELEMENT_ITEM, DEVICE } from '@const/enum';
+import { CONST_DATA } from '@constants/const';
+import { ELEMENT_ITEM, DEVICE } from '@constants/enum';
 import { copy } from '@shares/utility';
 
 export const SECTION_CONST = {
@@ -102,10 +102,10 @@ export const SECTION_DEFAULT_DATA = {
     selectable: !0,
   },
   [DEVICE.DESKTOP]: copy(
-    SECTION_DEFAULT_DATA_DEVICE,
+    SECTION_DEFAULT_DATA_DEVICE
   ) as typeof SECTION_DEFAULT_DATA_DEVICE,
   [DEVICE.MOBILE]: copy(
-    SECTION_DEFAULT_DATA_DEVICE,
+    SECTION_DEFAULT_DATA_DEVICE
   ) as typeof SECTION_DEFAULT_DATA_DEVICE,
 };
 

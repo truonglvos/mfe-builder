@@ -1,0 +1,386 @@
+<ng-container *ngrxLet="selectMenu$ as vm">
+  <span>{{ vm | json }}</span>
+  <div ui-view="top-menu">
+    <div class="builder-menu-top" ng-style="getStyle()" style="height: 56px">
+      <div class="editor builder-pull-left">
+        <div
+          (click)="clickButtonAdd(vm.showAddNew)"
+          class="builder-menu-top-button-box"
+          [ngClass]="{
+            active: vm.showAddNew
+          }"
+        >
+          <i class="builder-icon add"></i>
+          <span translate="">Thêm mới</span>
+        </div>
+
+        <div class="builder-menu-top-line"></div>
+
+        <div
+          ng-if="!is_editor_banner"
+          ng-click="clickShortcutSection($event)"
+          class="builder-icon builder-menu-top-button-icon section tooltip"
+        >
+          <span class="tooltiptext bottom" tooltiptext="Section"></span>
+        </div>
+        <div
+          ng-if="!is_editor_banner"
+          ng-click="clickShortcutPopup($event)"
+          class="builder-icon builder-menu-top-button-icon popup tooltip"
+        >
+          <span class="tooltiptext bottom" tooltiptext="Popup"></span>
+        </div>
+
+        <div
+          ng-click="clickButtonLayer($event)"
+          ng-class="classButtonLayer()"
+          class="builder-icon builder-menu-top-button-icon layer tooltip"
+        >
+          <span class="tooltiptext bottom" tooltiptext="Layer"></span>
+        </div>
+
+        <div class="builder-menu-top-line"></div>
+        <div class="builder-menu-top-button-text ladiui dropdown">
+          <span
+            (click)="toggleTool()"
+            class="ladiui dropdown-toggle basic"
+            [ngClass]="{
+              show: vm.tools.active
+            }"
+            data-toggle="dropdown"
+            translate=""
+            >Công cụ</span
+          >
+          <ul
+            class="ladiui dropdown-menu"
+            [ngClass]="{
+              open: vm.tools.active
+            }"
+          >
+            <li ng-click="clickToggleGrid($event)">
+              <a class="ladiui dropdown-item">
+                <input
+                  id="input-toggle-grid"
+                  type="checkbox"
+                  class="ladiui checkbox form-check-input-checkbox pointer-events-none"
+                  name="checkbox"
+                />
+                <span translate="">Bật/Tắt Grid (Ctrl + ')</span></a
+              >
+            </li>
+            <li (click)="clickToggleSnap()">
+              <a class="ladiui dropdown-item">
+                <input
+                  id="input-toggle-snap"
+                  type="checkbox"
+                  class="ladiui checkbox form-check-input-checkbox pointer-events-none"
+                  name="checkbox"
+                  [checked]="vm.tools.snap_grid"
+                />
+                <span translate="">Tự động bắt dính</span></a
+              >
+            </li>
+            <li ng-click="clickToggleSwapElement($event)">
+              <a class="ladiui dropdown-item">
+                <input
+                  id="input-toggle-swap-element"
+                  type="checkbox"
+                  class="ladiui checkbox form-check-input-checkbox pointer-events-none"
+                  name="checkbox"
+                />
+                <span translate="">Hoán đổi phần tử</span></a
+              >
+            </li>
+            <li ng-click="clickToggleShortcutAllElement($event)">
+              <a class="ladiui dropdown-item">
+                <input
+                  id="input-toggle-shortcut-all-element"
+                  type="checkbox"
+                  class="ladiui checkbox form-check-input-checkbox pointer-events-none"
+                  name="checkbox"
+                />
+                <span translate="">Công cụ thêm nhanh</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="builder-menu-top-button-text ladiui dropdown">
+          <span
+            class="ladiui dropdown-toggle basic"
+            data-toggle="dropdown"
+            translate=""
+            >Hỗ trợ</span
+          >
+          <ul class="ladiui dropdown-menu">
+            <li ng-click="clickSupportLiveChat($event)">
+              <a class="ladiui dropdown-item"
+                ><i class="builder-icon is-background support"></i
+                ><span translate="">LiveChat với chúng tôi</span></a
+              >
+            </li>
+            <li ng-click="clickSupportDocument($event)">
+              <a class="ladiui dropdown-item"
+                ><i class="builder-icon page"></i
+                ><span translate="">Tài liệu hướng dẫn</span></a
+              >
+            </li>
+            <li ng-click="clickSupportShortcut($event)">
+              <a class="ladiui dropdown-item"
+                ><i class="builder-icon shortcut"></i
+                ><span translate="">Phím tắt</span></a
+              >
+            </li>
+            <li ng-click="clickSupportCommunity($event)">
+              <a class="ladiui dropdown-item"
+                ><i class="builder-icon facebook"></i
+                ><span translate="">Cộng đồng LadiPage</span></a
+              >
+            </li>
+            <li ng-click="clickSupportSendFeedback($event)">
+              <a class="ladiui dropdown-item"
+                ><i class="builder-icon info"></i
+                ><span translate="">Yêu cầu tính năng</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="vm.device.showAllDevice" class="device-center">
+          <div
+            (click)="setDeviceScreen(device.DESKTOP)"
+            class="builder-icon builder-menu-top-button-icon desktop tooltip active"
+            [ngClass]="{
+              active: vm.device.deviceScreen === device.DESKTOP
+            }"
+          >
+            <span class="tooltiptext bottom" tooltiptext="Desktop"></span>
+          </div>
+          <div
+            (click)="setDeviceScreen(device.MOBILE)"
+            class="builder-icon builder-menu-top-button-icon mobile tooltip"
+            [ngClass]="{
+              active: vm.device.deviceScreen === device.MOBILE
+            }"
+          >
+            <span class="tooltiptext bottom" tooltiptext="Mobile"></span>
+          </div>
+          <div
+            ng-show="showSortMobileAll()"
+            ng-click="clickSortMobileAll($event)"
+            class="builder-menu-top-sort-mobile tooltip ng-hide"
+          >
+            <i class="builder-icon sort_mobile"></i>
+            <span
+              class="tooltiptext bottom"
+              tooltiptext="Tự động sắp xếp Mobile"
+            ></span>
+          </div>
+        </div>
+      </div>
+      <div class="editor builder-pull-right">
+        <div
+          ng-click="clickButtonUndo($event)"
+          class="builder-icon builder-menu-top-button-icon undo tooltip"
+        >
+          <span class="tooltiptext bottom" tooltiptext="Undo (Ctrl + Z)"></span>
+        </div>
+        <div
+          ng-click="clickButtonRedo($event)"
+          class="builder-icon builder-menu-top-button-icon redo tooltip"
+        >
+          <span
+            class="tooltiptext bottom"
+            tooltiptext="Redo (Ctrl + Shift + Z)"
+          ></span>
+        </div>
+        <div
+          ng-click="clickButtonFullscreen($event)"
+          class="builder-icon builder-menu-top-button-icon tooltip full_screen"
+        >
+          <span class="tooltiptext bottom" tooltiptext="Toàn màn hình"></span>
+        </div>
+        <div class="builder-menu-top-line"></div>
+        <div
+          ng-if="!is_editor_banner"
+          ng-click="clickButtonHistory($event)"
+          class="builder-icon builder-menu-top-button-icon history tooltip"
+        >
+          <span
+            class="tooltiptext bottom"
+            tooltiptext="Lịch sử chỉnh sửa"
+          ></span>
+        </div>
+        <div
+          (click)="clickButtonSave()"
+          class="builder-menu-top-button-text tooltip"
+        >
+          <span translate="">Lưu</span>
+          <span class="tooltiptext bottom" tooltiptext="Ctrl + S"></span>
+        </div>
+        <div
+          ng-click="clickButtonPreview($event)"
+          class="builder-menu-top-button-text tooltip"
+        >
+          <span translate="">Xem trước</span>
+          <span class="tooltiptext bottom" tooltiptext="Ctrl + P"></span>
+        </div>
+
+        <div class="builder-menu-top-line"></div>
+
+        <div
+          class="builder-menu-top-button-text dropdown-arrow ladiui dropdown"
+        >
+          <span class="ladiui dropdown-toggle basic" data-toggle="dropdown">
+            <i class="builder-icon arrow_down background-secondary"></i>
+            Thiết lập
+          </span>
+          <ul class="ladiui dropdown-menu">
+            <li
+              ng-if="!is_editor_banner &amp;&amp; !is_editor_popupx"
+              ng-click="clickSettingSeo($event)"
+            >
+              <a class="ladiui dropdown-item"
+                ><i class="builder-icon facebook"></i
+                ><span translate="">SEO &amp; Social</span></a
+              >
+            </li>
+            <li
+              ng-if="!is_editor_banner &amp;&amp; !is_editor_popupx"
+              ng-click="clickCodePageConversion($event)"
+            >
+              <a class="ladiui dropdown-item"
+                ><i class="builder-icon html_code"></i
+                ><span translate="">Mã chuyển đổi</span></a
+              >
+            </li>
+            <li
+              ng-if="!is_editor_banner"
+              ng-click="clickCodePageCustom($event)"
+            >
+              <a class="ladiui dropdown-item"
+                ><i class="builder-icon javascript_css"></i
+                ><span translate="">Mã JavaScript/CSS</span></a
+              >
+            </li>
+            <li ng-click="clickPageSettingDefault($event)">
+              <a class="ladiui dropdown-item"
+                ><i class="builder-icon page"></i
+                ><span translate="">Thiết lập toàn trang</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          ng-click="clickButtonPublish($event)"
+          class="builder-menu-top-button-text primary ladiui btn btn-primary tooltip"
+        >
+          <span translate="">Xuất bản</span>
+          <span
+            class="tooltiptext bottom"
+            tooltiptext="Ctrl + Shift + P"
+          ></span>
+        </div>
+        <div
+          ng-click="clickButtonAttribute($event)"
+          class="builder-icon builder-menu-top-button-icon attribute tooltip"
+        >
+          <span class="tooltiptext left" tooltiptext="Thuộc tính"></span>
+        </div>
+      </div>
+
+      <div class="preview text-center">
+        <div
+          ng-show="showAllDevice()"
+          ng-if="!is_editor_banner"
+          class="display-inline-block"
+        >
+          <div
+            ng-click="clickButtonDesktop($event)"
+            ng-class="classDesktop()"
+            class="builder-icon builder-menu-top-button-icon desktop tooltip active"
+          >
+            <span class="tooltiptext bottom" tooltiptext="Desktop"></span>
+          </div>
+          <div
+            ng-click="clickButtonMobile($event)"
+            ng-class="classMobile()"
+            class="builder-icon builder-menu-top-button-icon mobile tooltip"
+          >
+            <span class="tooltiptext bottom" tooltiptext="Mobile"></span>
+          </div>
+          <div class="builder-menu-top-line"></div>
+        </div>
+        <div class="display-inline-block">
+          <div
+            ng-click="clickButtonZoomOut($event)"
+            class="builder-icon builder-menu-top-button-icon zoom_out tooltip"
+          >
+            <span class="tooltiptext bottom" tooltiptext="Thu nhỏ"></span>
+          </div>
+          <div class="builder-menu-top-button-text ladiui dropdown">
+            <span class="ladiui dropdown-toggle basic" data-toggle="dropdown"
+              >100%</span
+            >
+            <ul
+              class="ladiui dropdown-menu"
+              style="width: 70px; min-width: initial"
+            >
+              <li ng-click="zoomPreview($event, 25)">
+                <a class="ladiui dropdown-item">25%</a>
+              </li>
+              <li ng-click="zoomPreview($event, 50)">
+                <a class="ladiui dropdown-item">50%</a>
+              </li>
+              <li ng-click="zoomPreview($event, 75)">
+                <a class="ladiui dropdown-item">75%</a>
+              </li>
+              <li ng-click="zoomPreview($event, 100)">
+                <a class="ladiui dropdown-item">100%</a>
+              </li>
+              <li ng-click="zoomPreview($event, 125)">
+                <a class="ladiui dropdown-item">125%</a>
+              </li>
+              <li ng-click="zoomPreview($event, 150)">
+                <a class="ladiui dropdown-item">150%</a>
+              </li>
+              <li ng-click="zoomPreview($event, 175)">
+                <a class="ladiui dropdown-item">175%</a>
+              </li>
+              <li ng-click="zoomPreview($event, 200)">
+                <a class="ladiui dropdown-item">200%</a>
+              </li>
+            </ul>
+          </div>
+          <div
+            ng-click="clickButtonZoomIn($event)"
+            class="builder-icon builder-menu-top-button-icon zoom_in tooltip"
+          >
+            <span class="tooltiptext bottom" tooltiptext="Phóng to"></span>
+          </div>
+        </div>
+      </div>
+      <div ng-show="isBuilder" class="preview builder-pull-right">
+        <div
+          ng-click="clickClosePreview($event)"
+          class="builder-menu-top-button-text"
+        >
+          <span translate="">Thoát xem</span>
+        </div>
+        <div
+          ng-click="clickButtonPublish($event)"
+          class="margin-right-0 builder-menu-top-button-text primary ladiui btn btn-primary tooltip"
+        >
+          <span translate="">Xuất bản</span>
+          <span
+            class="tooltiptext bottom"
+            tooltiptext="Ctrl + Shift + P"
+          ></span>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      LadiUI.init();
+    </script>
+  </div>
+</ng-container>

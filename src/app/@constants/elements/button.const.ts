@@ -1,5 +1,5 @@
-import { CONST_DATA } from '@const/const';
-import { ELEMENT_ITEM, DEVICE } from '@const/enum';
+import { CONST_DATA } from '@constants/const';
+import { ELEMENT_ITEM, DEVICE } from '@constants/enum';
 import { copy } from '@shares/utility';
 
 export const BUTTON_CONST = {
@@ -132,17 +132,17 @@ export const BUTTON_DEFAULT_DATA = {
     selectable: !0,
   },
   [DEVICE.DESKTOP]: copy(
-    BUTTON_DEFAULT_DATA_DEVICE,
+    BUTTON_DEFAULT_DATA_DEVICE
   ) as typeof BUTTON_DEFAULT_DATA_DEVICE,
   [DEVICE.MOBILE]: copy(
-    BUTTON_DEFAULT_DATA_DEVICE,
+    BUTTON_DEFAULT_DATA_DEVICE
   ) as typeof BUTTON_DEFAULT_DATA_DEVICE,
 };
 
 export const createButton = (
   index: number,
   parent: string,
-  parent_type: string,
+  parent_type: string
 ) => {
   const element = copy(BUTTON_DEFAULT_DATA);
   element.id = `${BUTTON_CONST.PREFIX}${index}`;

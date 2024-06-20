@@ -1,4 +1,4 @@
-import { ELEMENT_ITEM } from '@const/enum';
+import { ELEMENT_ITEM } from '@constants/enum';
 import { createBox } from './box.const';
 import { createButton } from './button.const';
 import { createHeadline } from './headline-const';
@@ -8,7 +8,7 @@ export const createElement = (
   type: ELEMENT_ITEM,
   index: number,
   parent?: string,
-  parentType?: string,
+  parentType?: string
 ) => {
   switch (type) {
     case ELEMENT_ITEM.HEADLINE:

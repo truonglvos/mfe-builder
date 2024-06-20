@@ -1,0 +1,405 @@
+<ng-container *ngrxLet="vm$ as vm">
+  {{ vm | json }}
+  <div
+    *ngIf="vm.quickEditorState.show"
+    id="builder-quick-editor"
+    data-element-id="HEADLINE12"
+    class="builder-quick-editor option-suggest-scroll"
+    [ngStyle]="{
+      top: vm.quickEditorState.top + 'px',
+      left: vm.quickEditorState.left + 'px',
+      visibility: vm.quickEditorState.show ? 'visible' : 'hidden'
+    }"
+    [attr.data-left]="vm.quickEditorPosition.left"
+    [attr.data-top]="vm.quickEditorPosition.top"
+    (click)="$event.stopPropagation()"
+    (mousedown)="$event.stopPropagation()"
+    (mouseup)="$event.stopPropagation()"
+  >
+    <ul>
+      <li
+        class="builder-quick-editor-up-down"
+        id="builder-quick-editor-up-down"
+        ng-if="showMoveUpDown &amp;&amp; !showEditTextRange &amp;&amp; !showCarouselUnCrop &amp;&amp; !showImageUnCrop"
+        *ngIf="!vm.showEditTextRange && !vm.showCreateGroup"
+        ng-style="styleQuickEditorUpDown()"
+      >
+        <i class="builder-icon split_vertical"></i>
+      </li>
+
+      <li
+        *ngIf="!vm.showEditTextRange && !vm.showCreateGroup"
+        ng-click="upIndexElement($event)"
+        ng-if="!showSavePopup &amp;&amp; !showSavePopupDefault &amp;&amp; !showSaveDropbox &amp;&amp; !showEditTextRange &amp;&amp; !showCarouselUnCrop &amp;&amp; !showImageUnCrop &amp;&amp; showElementUpDown"
+        class="tooltip"
+      >
+        <i class="builder-icon forward"></i>
+        <span class="tooltiptext top" tooltiptext="Lên trên (CTRL + ⬆)"></span>
+      </li>
+
+      <li
+        *ngIf="!vm.showEditTextRange && !vm.showCreateGroup"
+        ng-click="downIndexElement($event)"
+        ng-if="!showSavePopup &amp;&amp; !showSavePopupDefault &amp;&amp; !showSaveDropbox &amp;&amp; !showEditTextRange &amp;&amp; !showCarouselUnCrop &amp;&amp; !showImageUnCrop &amp;&amp; showElementUpDown"
+        class="tooltip"
+      >
+        <i class="builder-icon backward"></i>
+        <span
+          class="tooltiptext top"
+          tooltiptext="Xuống dưới (CTRL + ⬇)"
+        ></span>
+      </li>
+
+      <li
+        *ngIf="!vm.showEditTextRange && !vm.showCreateGroup"
+        ng-click="duplicateElement($event)"
+        ng-if="showDuplicate &amp;&amp; !showEditTextRange &amp;&amp; !showCarouselUnCrop &amp;&amp; !showImageUnCrop"
+        class="tooltip"
+      >
+        <i class="builder-icon duplicate"></i>
+        <span class="tooltiptext top" tooltiptext="Nhân bản (CTRL + D)"></span>
+      </li>
+
+      <li
+        *ngIf="!vm.showEditTextRange"
+        (click)="deleteElement()"
+        ng-if="showRemove &amp;&amp; !showEditTextRange &amp;&amp; !showCarouselUnCrop &amp;&amp; !showImageUnCrop"
+        class="tooltip"
+      >
+        <i class="builder-icon delete background-danger"></i>
+        <span class="tooltiptext top" tooltiptext="Xoá (DEL)"></span>
+      </li>
+
+      <li
+        *ngIf="!vm.showEditTextRange"
+        class="builder-quick-editor-border"
+      ></li>
+
+      <li
+        (click)="editText(vm.elementSelectedId); $event.stopPropagation()"
+        *ngIf="vm.showEditText && !vm.showEditTextRange"
+      >
+        <span translate="">Sửa chữ</span>
+      </li>
+
+      <li
+        *ngIf="vm.showEditText && !vm.showEditTextRange"
+        ng-click="clickMenuChildFontSize($event)"
+        ng-mousedown="clickMenuChildFontSize($event)"
+        ng-if="showEditText &amp;&amp; !showEditTextRange"
+        class="option-suggest tooltip builder-quick-editor-input-number"
+      >
+        <input
+          type="number"
+          class="input-number-no-resize cursor-initial ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min"
+          min="0"
+          (change)="changeFontSize()"
+          value="10"
+          ng-model="fontSize"
+          id="builder-quick-editor-input-font-size"
+        />
+        <span class="tooltiptext top" tooltiptext="Cỡ chữ"></span>
+        <ul
+          ng-class="classMenuChildFontSize()"
+          class="option-suggest-menu builder-menu-child"
+        >
+          <li
+            ng-click="clickChangeFontSize($event)"
+            *ngFor="let i of fontSizeList"
+          >
+            <span>{{ i }}</span>
+          </li>
+        </ul>
+      </li>
+      <li
+        *ngIf="vm.showEditTextRange"
+        ng-click="setAnimatedText($event)"
+        ng-if="showEditTextRange"
+      >
+        <span translate="">Hiệu ứng</span>
+      </li>
+      <li
+        *ngIf="vm.showEditTextRange"
+        ng-click="setLinkText($event)"
+        ng-if="showEditTextRange &amp;&amp; showEditTextLink"
+        class="tooltip"
+      >
+        <i class="builder-icon link_text"></i>
+        <span class="tooltiptext top" tooltiptext="Liên kết"></span>
+      </li>
+      <li
+        (click)="clickTextColor($event)"
+        *ngIf="vm.showEditText || vm.showEditTextRange"
+        class="tooltip"
+      >
+        <i class="builder-icon text_color"></i>
+        <span class="tooltiptext top" tooltiptext="Màu chữ"></span>
+      </li>
+      <li
+        *ngIf="vm.showEditTextRange"
+        (click)="clickTextBackgroundColor()"
+        ng-if="showEditTextRange"
+        class="tooltip"
+      >
+        <i class="builder-icon color"></i>
+        <span class="tooltiptext top" tooltiptext="Màu nền chữ"></span>
+      </li>
+
+      <li
+        *ngIf="vm.showEditTextRange"
+        (click)="setBoldText(vm.elementSelectedId, $event)"
+        (mousedown)="$event.stopPropagation()"
+        (mouseUp)="$event.stopPropagation()"
+        ng-if="showEditTextRange"
+        class="tooltip"
+      >
+        <i class="builder-icon bold"></i>
+        <span class="tooltiptext top" tooltiptext="In đậm"></span>
+      </li>
+      <li
+        *ngIf="vm.showEditTextRange"
+        (click)="setItalicText(vm.elementSelectedId, $event)"
+        ng-if="showEditTextRange"
+        class="tooltip"
+      >
+        <i class="builder-icon italic"></i>
+        <span class="tooltiptext top" tooltiptext="In nghiêng"></span>
+      </li>
+      <li
+        *ngIf="vm.showEditTextRange"
+        ng-click="setUnderlinedText($event)"
+        ng-if="showEditTextRange"
+        class="tooltip"
+      >
+        <i class="builder-icon underline"></i>
+        <span class="tooltiptext top" tooltiptext="Gạch chân"></span>
+      </li>
+      <li
+        *ngIf="vm.showEditTextRange"
+        ng-click="setStrikeThroughText($event)"
+        ng-if="showEditTextRange"
+        class="tooltip"
+      >
+        <i class="builder-icon strikethrough"></i>
+        <span class="tooltiptext top" tooltiptext="Gạch ngang"></span>
+      </li>
+      <li
+        *ngIf="vm.showEditTextRange"
+        ng-click="clickMenuChildEmojiSymbols($event)"
+        ng-if="showEditText &amp;&amp; showEditEmoji"
+        class="option-suggest tooltip"
+      >
+        <i class="builder-icon emoji"></i>
+        <span class="tooltiptext top" tooltiptext="Emoji &amp; Symbols"></span>
+        <ul
+          ng-class="classMenuChildEmojiSymbols()"
+          class="option-suggest-menu builder-menu-child"
+        >
+          <li ng-click="clickShowEmoji($event)">
+            <i class="builder-icon emoji"></i> <span translate="">Emoji</span>
+          </li>
+          <li ng-click="clickShowSymbols($event)">
+            <i class="builder-icon symbols"></i>
+            <span translate="">Symbols</span>
+          </li>
+        </ul>
+      </li>
+
+      <li
+        *ngIf="vm.showEditText && !vm.showEditTextRange"
+        (click)="clickMenuChildFontCustom(vm.fontCustomState.show)"
+        ng-if="showEditText &amp;&amp; !showEditTextRange"
+        class="option-suggest tooltip"
+      >
+        <i class="builder-icon bold"></i>
+        <span class="tooltiptext top" tooltiptext="Định dạng"></span>
+        <ul
+          ng-class="classMenuChildFontCustom()"
+          class="option-suggest-menu builder-menu-child"
+          [ngClass]="{
+            selected: vm.fontCustomState.show
+          }"
+        >
+          <ng-container *ngFor="let item of fontCustomList">
+            <li (click)="clickSetFontCustom(item.cssProperty)" class="selected">
+              <i class="builder-icon" [class]="item.icon"></i>
+              <span translate="">{{ item.label }}</span>
+            </li>
+          </ng-container>
+        </ul>
+      </li>
+
+      <li
+        *ngIf="vm.showEditText && !vm.showEditTextRange"
+        ng-click="clickMenuChildTextAlignCustom($event)"
+        ng-if="showEditText &amp;&amp; !showEditTextRange"
+        class="option-suggest tooltip"
+      >
+        <i class="builder-icon text_align_center"></i>
+        <span class="tooltiptext top" tooltiptext="Căn chỉnh"></span>
+        <ul
+          ng-class="classMenuChildTextAlignCustom()"
+          class="option-suggest-menu builder-menu-child"
+        >
+          <li
+            ng-click="clickTextAlignLeft($event)"
+            ng-class="classTextAlignLeft()"
+            class="selected"
+          >
+            <i class="builder-icon text_align_left"></i>
+            <span translate="">Căn trái</span>
+          </li>
+          <li
+            ng-click="clickTextAlignCenter($event)"
+            ng-class="classTextAlignCenter()"
+          >
+            <i class="builder-icon text_align_center"></i>
+            <span translate="">Căn giữa</span>
+          </li>
+          <li
+            ng-click="clickTextAlignRight($event)"
+            ng-class="classTextAlignRight()"
+          >
+            <i class="builder-icon text_align_right"></i>
+            <span translate="">Căn phải</span>
+          </li>
+          <li
+            ng-click="clickTextAlignJustify($event)"
+            ng-class="classTextAlignJustify()"
+          >
+            <i class="builder-icon text_align_justify"></i>
+            <span translate="">Căn đều 2 bên</span>
+          </li>
+        </ul>
+      </li>
+      <li
+        *ngIf="vm.showCreateGroup"
+        ng-click="clickMenuChildGroupAlign($event)"
+        ng-if="showAlignGroup || showRemoveGroup"
+        class="option-suggest tooltip"
+      >
+        <i class="builder-icon align_right"></i>
+        <span class="tooltiptext top" tooltiptext="Căn lề"></span>
+        <ul
+          ng-class="classMenuChildGroupAlign()"
+          class="option-suggest-menu builder-menu-child two-column"
+        >
+          <li ng-click="clickGroupAlignLeft($event)">
+            <i class="builder-icon align_left"></i>
+            <span translate="">Căn trái</span>
+          </li>
+          <li ng-click="clickGroupAlignTop($event)">
+            <i class="builder-icon align_top"></i>
+            <span translate="">Căn trên</span>
+          </li>
+          <li ng-click="clickGroupAlignCenterHorizontal($event)">
+            <i class="builder-icon align_center_horizontal"></i>
+            <span translate="">Căn giữa ngang</span>
+          </li>
+          <li ng-click="clickGroupAlignCenterVertical($event)">
+            <i class="builder-icon align_center_vertical"></i>
+            <span translate="">Căn giữa dọc</span>
+          </li>
+          <li ng-click="clickGroupAlignRight($event)">
+            <i class="builder-icon align_right"></i>
+            <span translate="">Căn phải</span>
+          </li>
+          <li ng-click="clickGroupAlignBottom($event)">
+            <i class="builder-icon align_bottom"></i>
+            <span translate="">Căn dưới</span>
+          </li>
+          <li ng-click="clickGroupAlignDistributeHorizontal($event)">
+            <i class="builder-icon distribute_horizontal"></i>
+            <span translate="">Căn đều ngang</span>
+          </li>
+          <li ng-click="clickGroupAlignDistributeVertical($event)">
+            <i class="builder-icon distribute_vertical"></i>
+            <span translate="">Căn đều dọc</span>
+          </li>
+        </ul>
+      </li>
+      <li
+        ng-click="createGroup($event)"
+        *ngIf="vm.showCreateGroup"
+        class="tooltip"
+      >
+        <span translate="">Tạo nhóm</span>
+        <span class="tooltiptext top" tooltiptext="CTRL + G"></span>
+      </li>
+      <li class="builder-quick-editor-border"></li>
+
+      <li ng-click="clickAttribute($event)" class="tooltip">
+        <i class="builder-icon setting_outline"></i>
+        <span class="tooltiptext top" tooltiptext="Thiết lập"></span>
+      </li>
+
+      <li
+        ng-click="clickElementDocument($event)"
+        ng-if="showElementDocument()"
+        class="tooltip"
+        *ngIf="!vm.showCreateGroup"
+      >
+        <i class="builder-icon help"></i>
+        <span class="tooltiptext top" tooltiptext="Hướng dẫn"></span>
+      </li>
+
+      <li
+        *ngIf="vm.showEditText && !vm.showEditTextRange"
+        ng-click="clickMenuChild($event)"
+        ng-if="showMore &amp;&amp; !showEditTextRange &amp;&amp; !showCarouselUnCrop &amp;&amp; !showImageUnCrop"
+        class="option-suggest tooltip"
+      >
+        <i class="builder-icon dot_menu_vertical"></i>
+        <span class="tooltiptext top" tooltiptext="Hành động khác"></span>
+        <ul
+          ng-class="classMenuChild()"
+          style="width: 240px"
+          class="builder-menu-child option-suggest-menu"
+        >
+          <li ng-if="showDuplicate" ng-click="clickCopyElement($event)">
+            <i class="builder-icon copy"></i>
+            <span translate="">Sao chép (CTRL + C)</span>
+          </li>
+
+          <li ng-if="showCopyStyle" ng-click="clickCopyStyle($event)">
+            <i class="builder-icon copy_style"></i>
+            <span translate="">Sao chép thiết kế</span>
+          </li>
+
+          <li
+            ng-if="showSaveAssets &amp;&amp; showDuplicate &amp;&amp; !showEditTextRange &amp;&amp; !showCarouselUnCrop &amp;&amp; !showImageUnCrop"
+            ng-click="saveAssets($event)"
+          >
+            <i class="builder-icon save"></i>
+            <span translate="">Lưu Assets</span>
+          </li>
+
+          <li ng-click="clickSyncElement($event)">
+            <i class="builder-icon reload"></i>
+            <span ng-if="!isDesktop()" translate=""
+              >Đồng bộ thiết kế từ Desktop</span
+            >
+          </li>
+
+          <li
+            ng-if="showHidden &amp;&amp; !showEditTextRange &amp;&amp; !showCarouselUnCrop &amp;&amp; !showImageUnCrop"
+            ng-click="clickHiddenElement($event)"
+          >
+            <i class="builder-icon eye_hide"></i>
+            <span translate="">Ẩn phần tử</span>
+          </li>
+
+          <li
+            ng-if="showLock &amp;&amp; !showEditTextRange &amp;&amp; !showCarouselUnCrop &amp;&amp; !showImageUnCrop"
+            ng-click="clickLockElement($event)"
+          >
+            <i class="builder-icon lock"></i>
+            <span translate="">Khoá phần tử</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- <div ng-show="showAddNew" class="menu-left-open ng-hide"></div> -->
+  </div>
+</ng-container>

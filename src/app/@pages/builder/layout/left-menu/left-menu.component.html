@@ -1,0 +1,4465 @@
+<ng-container *ngrxLet="vm$ as vm">
+  <div ui-view="left-menu">
+    <div
+      *ngIf="vm.selectMenu.showAddNew"
+      class="ladi-hidden builder-menu"
+      ng-show="showMenu"
+    >
+      <ul>
+        <li
+          class="builder-menu-two-column"
+          data-key="add_new"
+          ng-click="clickItem($event)"
+          menu-item=""
+          ng-repeat="item in listMenu"
+        >
+          <div
+            ng-class="classItem()"
+            class="builder-menu-click has-builder-menu-child"
+          >
+            <i ng-class="item.iconClassName" class="icon-c-add"></i>
+            <span>Thêm mới</span>
+          </div>
+          <ul ng-class="classChild()" class="builder-menu-child">
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-img"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Hình ảnh</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-shape-star"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Biểu tượng</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-gallery"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Gallery</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-pen-tool"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Pen Tool</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-button"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Nút bấm</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-video-player"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Video</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-button icon-button-group"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Nhóm nút bấm</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-form"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Form</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-text"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Tiêu đề</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-form"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Form Login</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-paragraph"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Đoạn văn</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-slider"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Carousel</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-list-bullet"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Danh sách</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-html"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Mã HTML</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-shape-line"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Đường kẻ</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-element-repeater"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Frame</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-shape-rectangle"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Hình hộp</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-grid-view icon-table"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Table</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-grid-view"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Collection List</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-page-setting"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Survey</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-tabs"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Tabs</span
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li
+          class="builder-menu-two-column"
+          data-key="product"
+          ng-click="clickItem($event)"
+          menu-item=""
+          ng-repeat="item in listMenu"
+        >
+          <div
+            ng-class="classItem()"
+            class="builder-menu-click has-builder-menu-child"
+          >
+            <i ng-class="item.iconClassName" class="icon-cart-add"></i>
+            <span>Sản phẩm</span>
+          </div>
+          <ul ng-class="classChild()" class="builder-menu-child">
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-grid-view"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Product List</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-cart-add"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Cart Button</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-cart"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Cart Icon</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-basket"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Checkout</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-combobox builder-pull-left"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                class="builder-pull-right"
+                style="width: calc(100% - 25px)"
+                >Phương thức vận chuyển</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-form builder-pull-left"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                class="builder-pull-right"
+                style="width: calc(100% - 25px)"
+                >Form nhập mã giảm giá</span
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li
+          class="builder-menu-two-column"
+          data-key="section"
+          ng-click="clickItem($event)"
+          menu-item=""
+          ng-repeat="item in listMenu"
+        >
+          <div
+            ng-class="classItem()"
+            class="builder-menu-click has-builder-menu-child"
+          >
+            <i ng-class="item.iconClassName" class="icon-section"></i>
+            <span>Section</span>
+          </div>
+          <ul
+            ng-class="classChild()"
+            class="builder-menu-child builder-menu-child-section"
+          >
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-c-add"
+              ></i>
+
+              <strong ng-if="child.isBold">Thêm mới Section</strong>
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="SECTION1"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+              class="section-tabs"
+            >
+              <i ng-if="!isShowIconImage()" ng-class="child.className"></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >SECTION1</span
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li
+          class="builder-menu-two-column"
+          data-key="popup"
+          ng-click="clickItem($event)"
+          menu-item=""
+          ng-repeat="item in listMenu"
+        >
+          <div
+            ng-class="classItem()"
+            class="builder-menu-click has-builder-menu-child"
+          >
+            <i ng-class="item.iconClassName" class="icon-popup"></i>
+            <span>Popup</span>
+          </div>
+          <ul
+            ng-class="classChild()"
+            class="builder-menu-child builder-menu-child-section"
+          >
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-c-add"
+              ></i>
+
+              <strong ng-if="child.isBold">Thêm mới Popup</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li
+          class="builder-menu-two-column"
+          data-key="dropbox"
+          ng-click="clickItem($event)"
+          menu-item=""
+          ng-repeat="item in listMenu"
+        >
+          <div
+            ng-class="classItem()"
+            class="builder-menu-click has-builder-menu-child"
+          >
+            <i ng-class="item.iconClassName" class="icon-dock-top"></i>
+            <span>Dropbox</span>
+          </div>
+          <ul
+            ng-class="classChild()"
+            class="builder-menu-child builder-menu-child-section"
+          >
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name=""
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="icon-c-add"
+              ></i>
+
+              <strong ng-if="child.isBold">Thêm mới Dropbox</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li
+          class="builder-menu-two-column"
+          data-key="layer"
+          ng-click="clickItem($event)"
+          menu-item=""
+          ng-repeat="item in listMenu"
+        >
+          <div ng-class="classItem()" class="builder-menu-click">
+            <i ng-class="item.iconClassName" class="icon-layer"></i>
+            <span>Layer</span>
+          </div>
+          <ul ng-class="classChild()" class="builder-menu-child"></ul>
+        </li>
+
+        <li
+          class="builder-menu-two-column"
+          data-key="app"
+          ng-click="clickItem($event)"
+          menu-item=""
+          ng-repeat="item in listMenu"
+        >
+          <div
+            ng-class="classItem()"
+            class="builder-menu-click has-builder-menu-child"
+          >
+            <i ng-class="item.iconClassName" class="icon-app-store"></i>
+            <span>Ứng dụng</span>
+          </div>
+          <ul ng-class="classChild()" class="builder-menu-child">
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="countdown"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <img
+                ng-if="isShowIconImage()"
+                class="builder-menu-icon-image"
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/countdown.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/countdown.png"
+              />
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+              ></span>
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_notify"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <img
+                ng-if="isShowIconImage()"
+                class="builder-menu-icon-image"
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/notify.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/notify.png"
+              />
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Notify</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_spinlucky"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <img
+                ng-if="isShowIconImage()"
+                class="builder-menu-icon-image"
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/spinlucky.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/spinlucky.png"
+              />
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >Spin Lucky</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_ladichat"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <img
+                ng-if="isShowIconImage()"
+                class="builder-menu-icon-image"
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/ladichat.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/ladichat.png"
+              />
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >LadiChat</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_popupx"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <img
+                ng-if="isShowIconImage()"
+                class="builder-menu-icon-image"
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/popupx.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/popupx.png"
+              />
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >PopupX</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_recaptcha"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <img
+                ng-if="isShowIconImage()"
+                class="builder-menu-icon-image"
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha.png"
+              />
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >reCAPTCHA</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_recaptcha"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <img
+                ng-if="isShowIconImage()"
+                class="builder-menu-icon-image"
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_checkbox.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_checkbox.png"
+              />
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >reCAPTCHA</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_recaptcha_enterprise"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <img
+                ng-if="isShowIconImage()"
+                class="builder-menu-icon-image"
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_enterprise.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_enterprise.png"
+              />
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >reCAPTCHA Enterprise</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_blog"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="ladi-hidden"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >app_blog</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_shopping"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="ladi-hidden"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >app_shopping</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="app_metu"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <img
+                ng-if="isShowIconImage()"
+                class="builder-menu-icon-image"
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/metu.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/metu.png"
+              />
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >METU</span
+              >
+            </li>
+
+            <li
+              ng-click="clickChild($event)"
+              ng-class="child.classChild"
+              data-name="OTP"
+              menu-item-child=""
+              ng-repeat="child in item.childs"
+            >
+              <i
+                ng-if="!isShowIconImage()"
+                ng-class="child.className"
+                class="ladi-hidden"
+              ></i>
+
+              <span
+                ng-style="child.styleSpan"
+                ng-class="child.classSpan"
+                ng-if="!child.isBold"
+                data-tabs-id=""
+                >OTP</span
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div
+      *ngIf="vm.selectMenu.showAddNew"
+      class="builder-menu-addnew"
+      style="top: 56px; left: 0px; height: calc(100vh - 56px)"
+      [attr.data-active]="vm.selectMenu.menuLeftActive"
+      [attr.data-element]="'headline'"
+    >
+      <div class="builder-menu-addnew-left">
+        <ng-container *ngFor="let menu of menuAddNewLeft">
+          <ng-container *ngIf="menu.isLine">
+            <div class="line"></div>
+          </ng-container>
+          <ng-container *ngIf="!menu.isLine">
+            <span
+              [attr.data-shortcut-menu]="
+                menu.dataShortcutMenu ? menu.value : ''
+              "
+              (click)="clickMenuLeftElement(menu.value)"
+              class="menu capitalize"
+              [ngClass]="{
+                active: menu.value === vm.selectMenu.menuLeftActive
+              }"
+            >
+              <i class="builder-icon" [class]="menu.value"></i>
+              {{ menu.label }}
+            </span>
+          </ng-container>
+        </ng-container>
+      </div>
+      <div class="builder-menu-addnew-right">
+        <div class="builder-menu-addnew-app">
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li class="selected" translate="">Ứng dụng</li>
+          </div>
+          <div
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div
+              data-app="countdown"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img
+                  ng-src="https://w.ladicdn.com/v2/source/builder/img/countdown.png"
+                  src="https://w.ladicdn.com/v2/source/builder/img/countdown.png"
+                />
+                <span translate="">Countdown</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              >
+                Tính năng này cho phép bạn có thể thêm đồng hồ đếm ngược vào
+                Landing Page một cách nhanh chóng và dễ dàng
+              </div>
+            </div>
+
+            <div
+              data-app="notify"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img
+                  ng-src="https://w.ladicdn.com/v2/source/builder/img/notify.png"
+                  src="https://w.ladicdn.com/v2/source/builder/img/notify.png"
+                />
+                <span translate="">Notify</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              >
+                Tính năng hiển thị lần lượt danh sách khách hàng đã mua hàng
+                dưới dạng thông báo ở góc màn hình
+              </div>
+            </div>
+
+            <div
+              data-app="spinlucky"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img
+                  ng-src="https://w.ladicdn.com/v2/source/builder/img/spinlucky.png"
+                  src="https://w.ladicdn.com/v2/source/builder/img/spinlucky.png"
+                />
+                <span translate="">Spin Lucky</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              >
+                Tính năng vòng quay may mắn tăng tỷ lệ chuyển đổi
+              </div>
+            </div>
+
+            <div
+              data-app="LADICHAT"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img
+                  ng-src="https://w.ladicdn.com/v2/source/builder/img/ladichat.png"
+                  src="https://w.ladicdn.com/v2/source/builder/img/ladichat.png"
+                />
+                <span translate="">LadiChat</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              >
+                Tính năng Livechat với khách hàng đa kênh chỉ trong một màn
+                hình. Website Livechat, Messenger, Facebook Comment, Instagram,
+                Zalo, Email, Whatsapp, Telegram, Youtube...
+              </div>
+            </div>
+
+            <div
+              data-app="POPUPX"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img
+                  ng-src="https://w.ladicdn.com/v2/source/builder/img/popupx.png"
+                  src="https://w.ladicdn.com/v2/source/builder/img/popupx.png"
+                />
+                <span translate="">PopupX</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              >
+                Tính năng giúp bạn hiển thị Popup được tạo từ Builder Landing
+                Page lên 1 website bất kỳ
+              </div>
+            </div>
+
+            <div
+              data-app="GOOGLE_RECAPTCHA"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img
+                  ng-src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha.png"
+                  src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha.png"
+                />
+                <span translate="">reCAPTCHA</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              >
+                Ứng dụng này cho phép bạn chặn việc trang Landing Page của bạn
+                bị Spam dữ liệu bằng BOT
+              </div>
+            </div>
+
+            <div
+              data-app="GOOGLE_RECAPTCHA_CHECKBOX"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item ladi-hidden"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img
+                  ng-src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_checkbox.png"
+                  src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_checkbox.png"
+                />
+                <span translate="">reCAPTCHA</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              ></div>
+            </div>
+
+            <div
+              data-app="GOOGLE_RECAPTCHA_ENTERPRISE"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img
+                  ng-src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_enterprise.png"
+                  src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_enterprise.png"
+                />
+                <span translate="">reCAPTCHA Enterprise</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              >
+                Ứng dụng này cho phép bạn chặn việc trang Landing Page của bạn
+                bị Spam dữ liệu bằng BOT
+              </div>
+            </div>
+
+            <div
+              data-app="BLOG"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item ladi-hidden"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img ng-src="" />
+                <span translate="">app_blog</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              ></div>
+            </div>
+
+            <div
+              data-app="SHOPPING"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item ladi-hidden"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img ng-src="" />
+                <span translate="">app_shopping</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              ></div>
+            </div>
+
+            <div
+              data-app="METU"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img
+                  ng-src="https://w.ladicdn.com/v2/source/builder/img/metu.png"
+                  src="https://w.ladicdn.com/v2/source/builder/img/metu.png"
+                />
+                <span translate="">METU</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              >
+                Tính năng tùy biến nút, công cụ tăng tỷ lệ tương tác với khách
+                hàng trên website
+              </div>
+            </div>
+
+            <div
+              data-app="OTP"
+              ng-class="item.className"
+              ng-click="clickItem($event)"
+              app-setting-item=""
+              class="builder-menu-addnew-app-item ladi-hidden"
+              ng-repeat="item in listApp"
+            >
+              <div class="builder-menu-addnew-app-item-header">
+                <img ng-src="" />
+                <span translate="">OTP</span>
+              </div>
+              <div
+                ng-show="showInstalled()"
+                class="builder-menu-addnew-app-installed ng-hide"
+              >
+                <i class="builder-icon check_installed is-background"></i>
+                <span translate="">Đã cài đặt</span>
+              </div>
+              <div
+                class="builder-menu-addnew-app-item-body"
+                ng-bind-html="(item.description | translate) | convertHtml"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="builder-menu-addnew-app-detail" data-app="countdown">
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li class="selected" translate="">Thiết lập</li>
+          </div>
+          <div
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="position-relative">
+              <button
+                ng-click="useApp($event, 'new_countdown')"
+                type="button"
+                class="builder-btn-primary ladiui btn-32 btn btn-outline-primary builder-menu-addnew-app-toggle-use"
+                translate=""
+              >
+                Sử dụng
+              </button>
+            </div>
+            <div class="builder-menu-addnew-app-item-header">
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/countdown.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/countdown.png"
+              />
+              <span translate="">Countdown</span>
+            </div>
+            <div class="builder-menu-addnew-app-item-detail-body">
+              <span
+                class="color-secondary"
+                ng-bind-html="('countdown_description' | translate) | convertHtml"
+                >Tính năng này cho phép bạn có thể thêm đồng hồ đếm ngược vào
+                Landing Page một cách nhanh chóng và dễ dàng</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="builder-menu-addnew-app-detail" data-app="notify">
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li class="selected" translate="">Thiết lập</li>
+          </div>
+          <div
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="position-relative">
+              <button
+                ng-click="useApp($event, 'new_notify')"
+                type="button"
+                class="builder-btn-primary ladiui btn-32 btn btn-outline-primary builder-menu-addnew-app-toggle-use"
+                translate=""
+              >
+                Sử dụng
+              </button>
+            </div>
+            <div class="builder-menu-addnew-app-item-header">
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/notify.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/notify.png"
+              />
+              <span translate="">Notify</span>
+            </div>
+            <div class="builder-menu-addnew-app-item-detail-body">
+              <span
+                class="color-secondary"
+                ng-bind-html="('notify_description' | translate) | convertHtml"
+                >Tính năng hiển thị lần lượt danh sách khách hàng đã mua hàng
+                dưới dạng thông báo ở góc màn hình</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="builder-menu-addnew-app-detail" data-app="spinlucky">
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li class="selected" translate="">Thiết lập</li>
+          </div>
+          <div
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="position-relative">
+              <button
+                ng-click="useApp($event, 'new_spinlucky')"
+                type="button"
+                class="builder-btn-primary ladiui btn-32 btn btn-outline-primary builder-menu-addnew-app-toggle-use"
+                translate=""
+              >
+                Sử dụng
+              </button>
+            </div>
+            <div class="builder-menu-addnew-app-item-header">
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/spinlucky.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/spinlucky.png"
+              />
+              <span translate="">Spin Lucky</span>
+            </div>
+            <div class="builder-menu-addnew-app-item-detail-body">
+              <span
+                class="color-secondary"
+                ng-bind-html="('spinlucky_description' | translate) | convertHtml"
+                >Tính năng vòng quay may mắn tăng tỷ lệ chuyển đổi</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="builder-menu-addnew-app-detail" data-app="LADICHAT">
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li class="selected" translate="">Thiết lập</li>
+          </div>
+          <div
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content option-suggest-scroll"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="position-relative">
+              <label class="ladiui switch builder-menu-addnew-app-toggle-use">
+                <input
+                  ng-change="changeLadiChatUse()"
+                  ng-model="ladiChatUse"
+                  type="checkbox"
+                  class="ng-pristine ng-untouched ng-valid ng-empty"
+                />
+                <span class="ladiui slider round"></span>
+              </label>
+            </div>
+            <div class="builder-menu-addnew-app-item-header">
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/ladichat.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/ladichat.png"
+              />
+              <span translate="">LadiChat</span>
+            </div>
+            <div class="builder-menu-addnew-app-item-detail-body">
+              <span
+                class="color-secondary"
+                ng-bind-html="('ladichat_description' | translate) | convertHtml"
+                >Tính năng Livechat với khách hàng đa kênh chỉ trong một màn
+                hình. Website Livechat, Messenger, Facebook Comment, Instagram,
+                Zalo, Email, Whatsapp, Telegram, Youtube...</span
+              >
+
+              <div
+                ng-show="ladiChatUse"
+                class="builder-menu-addnew-app-item-detail-body-item ng-hide"
+              >
+                <label
+                  class="builder-menu-addnew-app-item-detail-body-label"
+                  translate=""
+                  >Chọn cấu hình</label
+                >
+                <div class="builder-menu-addnew-app-item-detail-body-value">
+                  <div class="ladiui select-search dropdown option-suggest">
+                    <button
+                      ng-click="toggleOptionFormAccountId($event)"
+                      class="ladiui btn btn-outline-light dropdown-toggle select-dropdown select-form-account-id"
+                      data-toggle="dropdown"
+                    >
+                      <span class="ladiui dropdown-text"></span>
+                      <i
+                        class="builder-icon arrow_down background-secondary"
+                      ></i>
+                    </button>
+                    <ul
+                      class="list-form-account ladiui dropdown-menu option-suggest-menu"
+                    >
+                      <li ng-click="clickNoFormAccountId($event)">
+                        <span class="ladiui dropdown-item"
+                          ><label translate="">Không chọn</label></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                ng-show="ladiChatUse"
+                class="builder-menu-addnew-app-item-detail-body-item ng-hide"
+              >
+                <label
+                  class="builder-menu-addnew-app-item-detail-body-label"
+                  translate=""
+                  >Widget</label
+                >
+                <div class="builder-menu-addnew-app-item-detail-body-value">
+                  <div class="ladiui select-search dropdown option-suggest">
+                    <button
+                      ng-click="toggleOptionLadiChatWidgetId($event)"
+                      class="ladiui btn btn-outline-light dropdown-toggle select-dropdown select-ladichat-widget-id"
+                      data-toggle="dropdown"
+                    >
+                      <span class="ladiui dropdown-text"></span>
+                      <i
+                        class="builder-icon arrow_down background-secondary"
+                      ></i>
+                    </button>
+                    <ul class="ladiui dropdown-menu option-suggest-menu">
+                      <li ng-click="clickNoLadichatWidgetId($event)">
+                        <span class="ladiui dropdown-item"
+                          ><label translate="">Không chọn</label></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="builder-menu-addnew-app-item-detail-footer">
+              <button
+                ng-show="showSettingWidgetId()"
+                ng-click="clickSettingLadiChatWidgetId($event)"
+                type="button"
+                class="button-create-form-account builder-btn-primary ladiui btn btn-outline-primary builder-btn-black ng-hide"
+                translate=""
+              >
+                Thiết lập cấu hình hiển thị Widget
+              </button>
+              <button
+                ng-click="clickCreateFormAccountLadiChat($event)"
+                type="button"
+                class="button-create-form-account builder-btn-primary ladiui btn btn-outline-primary builder-btn-black"
+                translate=""
+              >
+                Tạo cấu hình LadiChat
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="builder-menu-addnew-app-detail" data-app="POPUPX">
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li class="selected" translate="">Thiết lập</li>
+          </div>
+          <div
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="position-relative">
+              <label class="ladiui switch builder-menu-addnew-app-toggle-use">
+                <input
+                  ng-change="changePopupXUse()"
+                  ng-model="popupXUse"
+                  type="checkbox"
+                  class="ng-pristine ng-untouched ng-valid ng-empty"
+                />
+                <span class="ladiui slider round"></span>
+              </label>
+            </div>
+            <div class="builder-menu-addnew-app-item-header">
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/popupx.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/popupx.png"
+              />
+              <span translate="">PopupX</span>
+            </div>
+            <div class="builder-menu-addnew-app-item-detail-body">
+              <span
+                class="color-secondary"
+                ng-bind-html="('popupx_description' | translate) | convertHtml"
+                >Tính năng giúp bạn hiển thị Popup được tạo từ Builder Landing
+                Page lên 1 website bất kỳ</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="builder-menu-addnew-app-detail" data-app="GOOGLE_RECAPTCHA">
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li class="selected" translate="">Thiết lập</li>
+          </div>
+          <div
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content option-suggest-scroll"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="position-relative">
+              <label class="ladiui switch builder-menu-addnew-app-toggle-use">
+                <input
+                  ng-change="changeGoogleRecaptchaUse()"
+                  ng-model="googleRecaptchaUse"
+                  type="checkbox"
+                  class="ng-pristine ng-untouched ng-valid ng-empty"
+                />
+                <span class="ladiui slider round"></span>
+              </label>
+            </div>
+            <div class="builder-menu-addnew-app-item-header">
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha.png"
+              />
+              <span translate="">reCAPTCHA</span>
+            </div>
+            <div class="builder-menu-addnew-app-item-detail-body">
+              <span
+                class="color-secondary"
+                ng-bind-html="('google_recaptcha_description' | translate) | convertHtml"
+                >Ứng dụng này cho phép bạn chặn việc trang Landing Page của bạn
+                bị Spam dữ liệu bằng BOT</span
+              >
+
+              <div
+                ng-show="googleRecaptchaUse"
+                class="builder-menu-addnew-app-item-detail-body-item ng-hide"
+              >
+                <label
+                  class="builder-menu-addnew-app-item-detail-body-label"
+                  translate=""
+                  >Chọn cấu hình</label
+                >
+                <div class="builder-menu-addnew-app-item-detail-body-value">
+                  <div class="ladiui select-search dropdown option-suggest">
+                    <button
+                      ng-click="toggleOptionFormAccountId($event)"
+                      class="ladiui btn btn-outline-light dropdown-toggle select-dropdown select-form-account-id"
+                      data-toggle="dropdown"
+                    >
+                      <span class="ladiui dropdown-text"></span>
+                      <i
+                        class="builder-icon arrow_down background-secondary"
+                      ></i>
+                    </button>
+                    <ul
+                      class="list-form-account ladiui dropdown-menu option-suggest-menu"
+                    >
+                      <li ng-click="clickNoFormAccountId($event)">
+                        <span class="ladiui dropdown-item"
+                          ><label translate="">Không chọn</label></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="builder-menu-addnew-app-item-detail-footer">
+              <button
+                ng-click="clickCreateFormAccountGoogleRecaptcha($event)"
+                type="button"
+                class="builder-btn-primary ladiui btn btn-outline-primary builder-btn-black"
+                translate=""
+              >
+                Tạo cấu hình reCAPTCHA
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="builder-menu-addnew-app-detail"
+          data-app="GOOGLE_RECAPTCHA_ENTERPRISE"
+        >
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li class="selected" translate="">Thiết lập</li>
+          </div>
+          <div
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content option-suggest-scroll"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="position-relative">
+              <label class="ladiui switch builder-menu-addnew-app-toggle-use">
+                <input
+                  ng-change="changeGoogleRecaptchaEnterpriseUse()"
+                  ng-model="googleRecaptchaEnterpriseUse"
+                  type="checkbox"
+                  class="ng-pristine ng-untouched ng-valid ng-empty"
+                />
+                <span class="ladiui slider round"></span>
+              </label>
+            </div>
+            <div class="builder-menu-addnew-app-item-header">
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_enterprise.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/google_recaptcha_enterprise.png"
+              />
+              <span translate="">reCAPTCHA Enterprise</span>
+            </div>
+            <div class="builder-menu-addnew-app-item-detail-body">
+              <span
+                class="color-secondary"
+                ng-bind-html="('google_recaptcha_enterprise_description' | translate) | convertHtml"
+                >Ứng dụng này cho phép bạn chặn việc trang Landing Page của bạn
+                bị Spam dữ liệu bằng BOT</span
+              >
+
+              <div
+                ng-show="googleRecaptchaEnterpriseUse"
+                class="builder-menu-addnew-app-item-detail-body-item ng-hide"
+              >
+                <label
+                  class="builder-menu-addnew-app-item-detail-body-label"
+                  translate=""
+                  >Chọn cấu hình</label
+                >
+                <div class="builder-menu-addnew-app-item-detail-body-value">
+                  <div class="ladiui select-search dropdown option-suggest">
+                    <button
+                      ng-click="toggleOptionFormAccountId($event)"
+                      class="ladiui btn btn-outline-light dropdown-toggle select-dropdown select-form-account-id"
+                      data-toggle="dropdown"
+                    >
+                      <span class="ladiui dropdown-text"></span>
+                      <i
+                        class="builder-icon arrow_down background-secondary"
+                      ></i>
+                    </button>
+                    <ul
+                      class="list-form-account ladiui dropdown-menu option-suggest-menu"
+                    >
+                      <li ng-click="clickNoFormAccountId($event)">
+                        <span class="ladiui dropdown-item"
+                          ><label translate="">Không chọn</label></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="builder-menu-addnew-app-item-detail-footer">
+              <button
+                ng-click="clickCreateFormAccountGoogleRecaptchaEnterprise($event)"
+                type="button"
+                class="builder-btn-primary ladiui btn btn-outline-primary builder-btn-black"
+                translate=""
+              >
+                Tạo cấu hình reCAPTCHA Enterprise
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="builder-menu-addnew-app-detail" data-app="METU">
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li class="selected" translate="">Thiết lập</li>
+          </div>
+          <div
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content option-suggest-scroll"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="position-relative">
+              <label class="ladiui switch builder-menu-addnew-app-toggle-use">
+                <input
+                  ng-change="changeMetuUse()"
+                  ng-model="metuUse"
+                  type="checkbox"
+                  class="ng-pristine ng-untouched ng-valid ng-empty"
+                />
+                <span class="ladiui slider round"></span>
+              </label>
+            </div>
+            <div class="builder-menu-addnew-app-item-header">
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/img/metu.png"
+                src="https://w.ladicdn.com/v2/source/builder/img/metu.png"
+              />
+              <span translate="">METU</span>
+            </div>
+            <div class="builder-menu-addnew-app-item-detail-body">
+              <span
+                class="color-secondary"
+                ng-bind-html="('metu_description' | translate) | convertHtml"
+                >Tính năng tùy biến nút, công cụ tăng tỷ lệ tương tác với khách
+                hàng trên website</span
+              >
+
+              <div
+                ng-show="metuUse"
+                class="builder-menu-addnew-app-item-detail-body-item ng-hide"
+              >
+                <label
+                  class="builder-menu-addnew-app-item-detail-body-label"
+                  translate=""
+                  >Chọn cấu hình</label
+                >
+                <div class="builder-menu-addnew-app-item-detail-body-value">
+                  <div class="ladiui select-search dropdown option-suggest">
+                    <button
+                      ng-click="toggleOptionFormAccountId($event)"
+                      class="ladiui btn btn-outline-light dropdown-toggle select-dropdown select-form-account-id"
+                      data-toggle="dropdown"
+                    >
+                      <span class="ladiui dropdown-text"></span>
+                      <i
+                        class="builder-icon arrow_down background-secondary"
+                      ></i>
+                    </button>
+                    <ul
+                      class="list-form-account ladiui dropdown-menu option-suggest-menu"
+                    >
+                      <li ng-click="clickNoFormAccountId($event)">
+                        <span class="ladiui dropdown-item"
+                          ><label translate="">Không chọn</label></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                ng-show="metuUse"
+                class="builder-menu-addnew-app-item-detail-body-item ng-hide"
+              >
+                <label
+                  class="builder-menu-addnew-app-item-detail-body-label"
+                  translate=""
+                  >Menu hiển thị</label
+                >
+                <div class="builder-menu-addnew-app-item-detail-body-value">
+                  <div class="ladiui select-search dropdown option-suggest">
+                    <button
+                      ng-click="toggleOptionMetuMenuId($event)"
+                      class="ladiui btn btn-outline-light dropdown-toggle select-dropdown"
+                      data-toggle="dropdown"
+                    >
+                      <span class="ladiui dropdown-text"></span>
+                      <i
+                        class="builder-icon arrow_down background-secondary"
+                      ></i>
+                    </button>
+                    <ul class="ladiui dropdown-menu option-suggest-menu">
+                      <li ng-click="clickNoMetuMenuId($event)">
+                        <span class="ladiui dropdown-item"
+                          ><label translate="">Không chọn</label></span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="builder-menu-addnew-app-item-detail-footer">
+              <button
+                ng-click="clickCreateFormAccountMetu($event)"
+                type="button"
+                class="builder-btn-primary ladiui btn btn-outline-primary builder-btn-black"
+                translate=""
+              >
+                Tạo cấu hình METU
+              </button>
+              <button
+                ng-click="clickLoginMetu($event)"
+                type="button"
+                class="builder-btn-primary ladiui btn btn-outline-primary builder-btn-black"
+                translate=""
+              >
+                Đăng nhập METU
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          data-active="design"
+          ng-class="classSettingBlog()"
+          class="builder-menu-addnew-blog builder-menu-addnew-active min-size"
+        >
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li ng-click="clickTabDesign($event)" class="selected" translate="">
+              Thiết kế
+            </li>
+          </div>
+          <div
+            data-tab="design"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div
+              class="builder-setting-intro blog"
+              ng-show="!blogUse || !isSettingBlog()"
+            >
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/svg/blog_intro.svg"
+                src="https://w.ladicdn.com/v2/source/builder/svg/blog_intro.svg"
+              />
+              <div ng-bind-html="('blog_intro' | translate) | convertHtml">
+                <div
+                  style="font-size: 18px"
+                  class="text-center font-weight-500"
+                >
+                  Tính năng blog
+                </div>
+                <br />
+                <div
+                  style="font-size: 14px"
+                  class="text-center color-secondary"
+                >
+                  Cho phép bạn tạo bài viết nội dung và cập nhật nội dung đó
+                  trên trang của bạn.
+                </div>
+                <br /><br />
+                <ul>
+                  <li>Thiết lập đơn giản dễ sử dụng</li>
+                  <li>Quản lý bài viết linh hoạt dễ dàng</li>
+                </ul>
+              </div>
+              <button
+                ng-click="activeBlogNow($event)"
+                class="ladiui btn btn-primary"
+                translate=""
+              >
+                Kích hoạt ngay
+              </button>
+            </div>
+            <div ng-show="blogUse &amp;&amp; isSettingBlog()" class="ng-hide">
+              <div class="builder-shopping-toggle">
+                <span translate="">Kích hoạt tính năng Blog</span>
+                <label class="ladiui switch">
+                  <input
+                    ng-change="changeBlogSettingDisplay()"
+                    ng-model="blogUse"
+                    type="checkbox"
+                    class="ng-pristine ng-untouched ng-valid ng-empty"
+                  />
+                  <span class="ladiui slider round"></span>
+                </label>
+              </div>
+              <div ng-show="blogUse" class="ng-hide">
+                <div class="builder-menu-addnew-element-thumb">
+                  <div style="width: 390px; height: 164px" class="background">
+                    <div
+                      data-id="POPUP_BLOG"
+                      ng-style="elementPreviewStyle('POPUP_BLOG')"
+                      ng-bind-html="elementPreviewHtml('POPUP_BLOG', false) | convertHtml"
+                      class="preview-html"
+                    ></div>
+                    <button
+                      class="ladiui btn btn-32 btn-primary hover-click"
+                      ng-click="clickPopupBlog($event)"
+                      translate=""
+                    >
+                      Chỉnh sửa
+                    </button>
+                  </div>
+                  <div class="title"><span>POPUP_BLOG</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          data-active="design"
+          class="builder-menu-addnew-product builder-menu-addnew-active"
+        >
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li
+              data-tab-name="design"
+              ng-show="shoppingUse"
+              ng-click="clickTabDesign($event)"
+              class="selected ng-hide"
+              translate=""
+            >
+              Thiết kế
+            </li>
+            <li
+              data-tab-name="setting"
+              ng-click="clickTabSetting($event)"
+              translate=""
+            >
+              Thiết lập
+            </li>
+          </div>
+          <div
+            ng-show="shoppingUse"
+            data-tab="design"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content ng-hide"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-element-thumb">
+              <div class="background">
+                <img
+                  style="width: 357px"
+                  ng-src="https://w.ladicdn.com/5d47d426e740623cbe011753/product_list-20220811075229.png"
+                  src="https://w.ladicdn.com/5d47d426e740623cbe011753/product_list-20220811075229.png"
+                />
+                <button
+                  class="ladiui btn btn-32 btn-primary hover-click"
+                  ng-click="clickNewProductList($event)"
+                  translate=""
+                >
+                  Thêm mới
+                </button>
+              </div>
+              <div class="title">
+                <span translate="">Product List</span>
+              </div>
+            </div>
+            <div class="builder-menu-addnew-element-thumb">
+              <div class="background">
+                <img
+                  style="width: 280px"
+                  ng-src="https://w.ladicdn.com/5d47d426e740623cbe011753/cart_button-20220811075229.png"
+                  src="https://w.ladicdn.com/5d47d426e740623cbe011753/cart_button-20220811075229.png"
+                />
+                <button
+                  class="ladiui btn btn-32 btn-primary hover-click"
+                  ng-click="clickNewCartButton($event)"
+                  translate=""
+                >
+                  Thêm mới
+                </button>
+              </div>
+              <div class="title">
+                <span translate="">Cart Button</span>
+              </div>
+            </div>
+            <div class="builder-menu-addnew-element-thumb">
+              <div class="background">
+                <img
+                  style="width: 45px"
+                  ng-src="https://w.ladicdn.com/5d47d426e740623cbe011753/cart-20220811075229.png"
+                  src="https://w.ladicdn.com/5d47d426e740623cbe011753/cart-20220811075229.png"
+                />
+                <button
+                  class="ladiui btn btn-32 btn-primary hover-click"
+                  ng-click="clickNewCart($event)"
+                  translate=""
+                >
+                  Thêm mới
+                </button>
+              </div>
+              <div class="title">
+                <span translate="">Cart</span>
+              </div>
+            </div>
+            <div class="builder-menu-addnew-element-thumb">
+              <div class="background">
+                <img
+                  style="width: 340px"
+                  ng-src="https://w.ladicdn.com/5d47d426e740623cbe011753/delivery_method-20220811075229.png"
+                  src="https://w.ladicdn.com/5d47d426e740623cbe011753/delivery_method-20220811075229.png"
+                />
+                <button
+                  class="ladiui btn btn-32 btn-primary hover-click"
+                  ng-click="clickNewDeliveryMethod($event)"
+                  translate=""
+                >
+                  Thêm mới
+                </button>
+              </div>
+              <div class="title">
+                <span translate="">Phương thức vận chuyển</span>
+              </div>
+            </div>
+            <div class="builder-menu-addnew-element-thumb">
+              <div class="background">
+                <img
+                  style="width: 340px"
+                  ng-src="https://w.ladicdn.com/5d47d426e740623cbe011753/form_coupon-20220811075229.png"
+                  src="https://w.ladicdn.com/5d47d426e740623cbe011753/form_coupon-20220811075229.png"
+                />
+                <button
+                  class="ladiui btn btn-32 btn-primary hover-click"
+                  ng-click="clickNewFormCoupon($event)"
+                  translate=""
+                >
+                  Thêm mới
+                </button>
+              </div>
+              <div class="title">
+                <span translate="">Form nhập mã giảm giá</span>
+              </div>
+            </div>
+          </div>
+          <div
+            data-tab="setting"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content option-suggest-scroll"
+            style="height: calc(100vh - 115px)"
+          >
+            <div
+              class="builder-setting-intro"
+              ng-show="!shoppingUse || !isSettingShopping()"
+            >
+              <img
+                ng-src="https://w.ladicdn.com/v2/source/builder/svg/shopping_intro.svg"
+                src="https://w.ladicdn.com/v2/source/builder/svg/shopping_intro.svg"
+              />
+              <div ng-bind-html="('shopping_intro' | translate) | convertHtml">
+                <div
+                  style="font-size: 18px"
+                  class="text-center font-weight-500"
+                >
+                  Tính năng sản phẩm
+                </div>
+                <br />
+                <div
+                  style="font-size: 14px"
+                  class="text-center color-secondary"
+                >
+                  Quản lý và bán sản phẩm của bạn ngay trên Landing Page một
+                  cách dễ dàng
+                </div>
+                <br /><br />
+                <ul>
+                  <li>
+                    Tích hợp kết nối đa nền tảng bán hàng: Shopify, WooCommerce
+                    WordPress, Haravan, Sapo Web, LadiSales...
+                  </li>
+                  <li>Tính năng giỏ hàng tiện lợi</li>
+                  <li>Tối ưu hóa quy trình mua hàng</li>
+                </ul>
+              </div>
+              <button
+                ng-click="activeShoppingNow($event)"
+                class="ladiui btn btn-primary"
+                translate=""
+              >
+                Kích hoạt ngay
+              </button>
+            </div>
+            <div
+              ng-show="shoppingUse &amp;&amp; isSettingShopping()"
+              class="ng-hide"
+            >
+              <div class="builder-shopping-toggle">
+                <span translate="">Kích hoạt tính năng sản phẩm</span>
+                <label class="ladiui switch">
+                  <input
+                    ng-change="changeShoppingSettingDisplay()"
+                    ng-model="shoppingUse"
+                    type="checkbox"
+                    class="ng-pristine ng-untouched ng-valid ng-empty"
+                  />
+                  <span class="ladiui slider round"></span>
+                </label>
+              </div>
+
+              <div ng-show="shoppingUse" class="ng-hide">
+                <div class="builder-menu-addnew-app-item-header">
+                  <span translate="">Thiết lập chung</span>
+                </div>
+                <div class="builder-menu-addnew-app-item-detail-body">
+                  <div class="builder-menu-addnew-app-item-detail-body-item">
+                    <label
+                      class="builder-menu-addnew-app-item-detail-body-label"
+                      translate=""
+                      >Chọn cấu hình</label
+                    >
+                    <div class="builder-menu-addnew-app-item-detail-body-value">
+                      <div class="ladiui select-search dropdown option-suggest">
+                        <button
+                          ng-click="toggleOptionFormAccountId($event)"
+                          class="ladiui btn btn-outline-light dropdown-toggle select-dropdown select-form-account-id"
+                          data-toggle="dropdown"
+                        >
+                          <span class="ladiui dropdown-text"></span>
+                          <i
+                            class="builder-icon arrow_down background-secondary"
+                          ></i>
+                        </button>
+                        <ul
+                          class="list-form-account ladiui dropdown-menu option-suggest-menu"
+                        >
+                          <li ng-click="clickNoFormAccountId($event)">
+                            <span class="ladiui dropdown-item"
+                              ><label translate="">Không chọn</label></span
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="builder-menu-addnew-app-item-detail-body-item">
+                    <label
+                      class="builder-menu-addnew-app-item-detail-body-label"
+                      translate=""
+                      >Third Party Checkout</label
+                    >
+                    <div class="builder-menu-addnew-app-item-detail-body-value">
+                      <label
+                        ng-class="classShoppingThirdPartyUse()"
+                        class="ladiui switch"
+                      >
+                        <input
+                          ng-change="changeShoppingThirdPartyUse()"
+                          ng-model="shoppingThirdPartyUse"
+                          type="checkbox"
+                          class="ng-pristine ng-untouched ng-valid ng-not-empty"
+                        />
+                        <span class="ladiui slider round"></span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div
+                    ng-show="!shoppingThirdPartyUse &amp;&amp; shoppingIsLadiSale()"
+                    class="builder-menu-addnew-app-item-detail-body-item ng-hide"
+                  >
+                    <label
+                      class="builder-menu-addnew-app-item-detail-body-label"
+                      translate=""
+                      >Thanh toán qua LadiSales</label
+                    >
+                    <div class="builder-menu-addnew-app-item-detail-body-value">
+                      <label class="ladiui switch sw-sm">
+                        <input
+                          ng-change="changeShoppingConfigCheckoutUse()"
+                          ng-model="shoppingConfigCheckoutUse"
+                          type="checkbox"
+                          class="ng-pristine ng-untouched ng-valid ng-empty"
+                        />
+                        <span class="ladiui sw-sm slider round"></span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div
+                    ng-show="!shoppingThirdPartyUse &amp;&amp; shoppingConfigCheckoutUse &amp;&amp; shoppingIsLadiSale()"
+                    class="builder-menu-addnew-app-item-detail-body-item ng-hide"
+                  >
+                    <label
+                      class="builder-menu-addnew-app-item-detail-body-label"
+                      translate=""
+                      >ID Cấu hình thanh toán</label
+                    >
+                    <div class="builder-menu-addnew-app-item-detail-body-value">
+                      <input
+                        ng-change="changeShoppingConfigCheckoutId()"
+                        ng-model="shoppingConfigCheckoutId"
+                        class="ladiui form-control ng-pristine ng-untouched ng-valid ng-empty"
+                        autocomplete="off"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="builder-menu-addnew-app-item-header">
+                  <span translate="">Chỉnh sửa Popup</span>
+                </div>
+                <div class="builder-menu-addnew-app-item-detail-body">
+                  <div
+                    ng-click="clickPopupProduct($event)"
+                    class="builder-menu-addnew-app-item-detail-body-item-popup"
+                  >
+                    <i class="builder-icon is-background popup_product"></i>
+                    <span>POPUP_PRODUCT</span>
+                  </div>
+                  <div
+                    ng-click="clickPopupCart($event)"
+                    class="builder-menu-addnew-app-item-detail-body-item-popup"
+                  >
+                    <i class="builder-icon is-background popup_cart"></i>
+                    <span>POPUP_CART</span>
+                  </div>
+                  <div
+                    ng-click="clickPopupCheckout($event)"
+                    class="builder-menu-addnew-app-item-detail-body-item-popup"
+                  >
+                    <i class="builder-icon is-background popup_checkout"></i>
+                    <span>POPUP_CHECKOUT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          data-active="list"
+          class="builder-menu-addnew-dropbox builder-menu-addnew-active"
+        >
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li ng-click="clickTabList($event)" class="selected" translate="">
+              Danh sách
+            </li>
+            <li ng-click="clickTabTemplate($event)" translate="">
+              Dropbox mẫu
+            </li>
+            <li ng-click="clickTabYourTemplate($event)" translate="">
+              Dropbox của tôi
+            </li>
+            <li
+              ng-click="clickLoadMoreDropbox($event)"
+              class="color-primary last"
+              translate=""
+            >
+              Xem thêm
+            </li>
+          </div>
+          <div
+            data-tab="list"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content option-suggest-scroll"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-content-header">
+              <span class="builder-menu-addnew-content-header-left" translate=""
+                >DROPBOX TRONG TRANG</span
+              >
+              <span class="builder-menu-addnew-content-header-right">
+                <i class="builder-icon add_small background-primary"></i>
+                <a ng-click="clickNewDropbox($event)" translate=""
+                  >Thêm mới Dropbox</a
+                >
+              </span>
+            </div>
+          </div>
+          <div
+            data-tab="template"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-element-tag">
+              <div
+                ng-click="clickAllDropboxTemplate($event)"
+                class="builder-menu-addnew-element-tag-item selected"
+              >
+                <span translate="">Tất cả</span>
+              </div>
+            </div>
+
+            <div
+              class="builder-menu-addnew-element-list option-suggest-scroll"
+            ></div>
+          </div>
+          <div
+            data-tab="your_template"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-element-tag">
+              <div
+                ng-click="clickAllDropboxYourTemplate($event)"
+                class="builder-menu-addnew-element-tag-item selected"
+              >
+                <span translate="">Tất cả</span>
+              </div>
+            </div>
+
+            <div
+              class="builder-menu-addnew-element-list option-suggest-scroll"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          data-active="list"
+          class="builder-menu-addnew-popup builder-menu-addnew-active"
+        >
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li ng-click="clickTabList($event)" class="selected" translate="">
+              Danh sách
+            </li>
+            <li ng-click="clickTabTemplate($event)" translate="">Popup mẫu</li>
+            <li ng-click="clickTabYourTemplate($event)" translate="">
+              Popup của tôi
+            </li>
+            <li
+              ng-click="clickLoadMorePopup($event)"
+              class="color-primary last"
+              translate=""
+            >
+              Xem thêm
+            </li>
+          </div>
+          <div
+            data-tab="list"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content option-suggest-scroll"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-content-header">
+              <span class="builder-menu-addnew-content-header-left" translate=""
+                >POPUP TRONG TRANG</span
+              >
+              <span class="builder-menu-addnew-content-header-right">
+                <i class="builder-icon add_small background-primary"></i>
+                <a ng-click="clickNewPopup($event)" translate=""
+                  >Thêm mới Popup</a
+                >
+              </span>
+            </div>
+
+            <div
+              ng-show="showItem()"
+              ng-init="is_popup = true;"
+              element-menu-left-item=""
+              class="builder-menu-addnew-element-thumb ng-hide"
+              ng-repeat="item in listPopup"
+            >
+              <div style="width: 390px; height: 164px" class="background">
+                <div
+                  data-id="POPUP_OTP"
+                  ng-style="elementPreviewStyle(item)"
+                  ng-bind-html="elementPreviewHtml(item, false) | convertHtml"
+                  class="preview-html"
+                  style=""
+                ></div>
+                <button
+                  class="ladiui btn btn-32 btn-primary hover-click"
+                  ng-click="clickItem($event)"
+                  translate=""
+                >
+                  Chỉnh sửa
+                </button>
+              </div>
+              <div class="title">
+                <span>POPUP_OTP</span>
+                <div
+                  ng-show="showAction()"
+                  class="menu ladiui dropdown option-suggest position-relative ng-hide"
+                >
+                  <i
+                    ng-click="clickMenu($event)"
+                    class="ladiui dropdown-toggle basic select-dropdown builder-icon dot_menu background-black"
+                    data-toggle="dropdown"
+                  ></i>
+                  <ul class="ladiui dropdown-menu option-suggest-menu">
+                    <li ng-click="edit($event)">
+                      <a class="ladiui dropdown-item" translate="">Sửa tên</a>
+                    </li>
+                    <li ng-click="delete($event)">
+                      <a class="ladiui dropdown-item color-danger" translate=""
+                        >Xoá</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            data-tab="template"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-element-tag">
+              <div
+                ng-click="clickAllPopupTemplate($event)"
+                class="builder-menu-addnew-element-tag-item selected"
+              >
+                <span translate="">Tất cả</span>
+              </div>
+            </div>
+
+            <div
+              class="builder-menu-addnew-element-list option-suggest-scroll"
+            ></div>
+          </div>
+          <div
+            data-tab="your_template"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-element-tag">
+              <div
+                ng-click="clickAllPopupYourTemplate($event)"
+                class="builder-menu-addnew-element-tag-item selected"
+              >
+                <span translate="">Tất cả</span>
+              </div>
+            </div>
+
+            <div
+              class="builder-menu-addnew-element-list option-suggest-scroll"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          data-active="list"
+          class="builder-menu-addnew-section builder-menu-addnew-active"
+        >
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li ng-click="clickTabList($event)" class="selected" translate="">
+              Danh sách
+            </li>
+            <li ng-click="clickTabTemplate($event)">Section mẫu</li>
+            <li ng-click="clickTabYourTemplate($event)">Section của tôi</li>
+            <li
+              ng-click="clickLoadMoreSection($event)"
+              class="color-primary last"
+              translate=""
+            >
+              Xem thêm
+            </li>
+          </div>
+          <div
+            data-tab="list"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content option-suggest-scroll"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-content-header">
+              <span class="builder-menu-addnew-content-header-left"
+                >SECTION TRONG TRANG</span
+              >
+              <span class="builder-menu-addnew-content-header-right">
+                <i class="builder-icon add_small background-primary"></i>
+                <a ng-click="clickNewSection($event)">Thêm mới Section</a>
+              </span>
+            </div>
+
+            <div class="builder-menu-addnew-element-thumb-sortable ui-sortable">
+              <div
+                ng-show="showItem()"
+                ng-init="is_section = true;"
+                element-menu-left-item=""
+                class="builder-menu-addnew-element-thumb ui-sortable-handle"
+                ng-repeat="item in listSection"
+              >
+                <div style="width: 390px; height: 164px" class="background">
+                  <div
+                    data-id="SECTION1"
+                    ng-style="elementPreviewStyle(item)"
+                    ng-bind-html="elementPreviewHtml(item, false) | convertHtml"
+                    class="preview-html"
+                    style=""
+                  ></div>
+                  <button
+                    class="ladiui btn btn-32 btn-primary hover-click"
+                    ng-click="clickItem($event)"
+                    translate=""
+                  >
+                    Chỉnh sửa
+                  </button>
+                </div>
+                <div class="title">
+                  <span>SECTION1</span>
+                  <div
+                    ng-show="showAction()"
+                    class="menu ladiui dropdown option-suggest position-relative"
+                  >
+                    <i
+                      ng-click="clickMenu($event)"
+                      class="ladiui dropdown-toggle basic select-dropdown builder-icon dot_menu background-black"
+                      data-toggle="dropdown"
+                    ></i>
+                    <ul class="ladiui dropdown-menu option-suggest-menu">
+                      <li ng-click="edit($event)">
+                        <a class="ladiui dropdown-item" translate="">Sửa tên</a>
+                      </li>
+                      <li ng-click="delete($event)">
+                        <a
+                          class="ladiui dropdown-item color-danger"
+                          translate=""
+                          >Xoá</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <script
+                  ng-if="$last &amp;&amp; is_section"
+                  type="text/javascript"
+                >
+                  (function () {
+                    var list = document.getElementsByClassName(
+                      'builder-menu-addnew-element-thumb-sortable',
+                    );
+                    for (var i = 0; i < list.length; i++) {
+                      LadiPage.setSortableElement(
+                        list[i],
+                        { isCancel: false },
+                        function (oldIndex, newIndex) {
+                          window.$rootScope.$broadcast(
+                            'update-section-position',
+                            { oldIndex: oldIndex, newIndex: newIndex },
+                          );
+                        },
+                      );
+                    }
+                  })();
+                </script>
+              </div>
+            </div>
+          </div>
+          <div
+            data-tab="template"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-element-tag">
+              <div
+                ng-show="!is_editor_popupx"
+                ng-click="clickAllSectionTemplate($event)"
+                class="builder-menu-addnew-element-tag-item selected"
+              >
+                <span translate="">Tất cả</span>
+              </div>
+            </div>
+
+            <div
+              class="builder-menu-addnew-element-list option-suggest-scroll"
+            ></div>
+          </div>
+          <div
+            data-tab="your_template"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-element-tag">
+              <div
+                ng-click="clickAllSectionYourTemplate($event)"
+                class="builder-menu-addnew-element-tag-item selected"
+              >
+                <span translate="">Tất cả</span>
+              </div>
+            </div>
+
+            <div
+              class="builder-menu-addnew-element-list option-suggest-scroll"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          data-active="list"
+          class="builder-menu-addnew-banner builder-menu-addnew-active"
+        >
+          <div
+            ng-style="styleAddNewHeader()"
+            class="builder-menu-addnew-header"
+            style="height: 58px"
+          >
+            <li ng-click="clickTabList($event)" class="selected" translate="">
+              Danh sách
+            </li>
+            <li ng-click="clickTabTemplate($event)">Banner mẫu</li>
+            <li
+              ng-click="clickLoadMoreBanner($event)"
+              class="color-primary last"
+              translate=""
+            >
+              Xem thêm
+            </li>
+          </div>
+          <div
+            data-tab="list"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content option-suggest-scroll"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-content-header">
+              <span class="builder-menu-addnew-content-header-left"
+                >BANNER TRONG TRANG</span
+              >
+              <span class="builder-menu-addnew-content-header-right">
+                <i class="builder-icon add_small background-primary"></i>
+                <a ng-click="clickNewBanner($event)">Thêm mới Banner</a>
+              </span>
+            </div>
+          </div>
+          <div
+            data-tab="template"
+            ng-style="styleAddNewContent()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 115px)"
+          >
+            <div class="builder-menu-addnew-element-tag">
+              <div
+                ng-click="clickAllBannerTemplate($event)"
+                class="builder-menu-addnew-element-tag-item selected"
+              >
+                <span translate="">Tất cả</span>
+              </div>
+            </div>
+
+            <div
+              class="builder-menu-addnew-element-list option-suggest-scroll"
+            ></div>
+          </div>
+        </div>
+
+        <div class="builder-menu-addnew-assets">
+          <div
+            ng-style="styleAddNewContentAssets()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 57px)"
+          >
+            <div class="builder-menu-addnew-element-tag">
+              <div
+                ng-click="clickAllAssetsYourTemplate($event)"
+                class="builder-menu-addnew-element-tag-item selected"
+              >
+                <span translate="">Tất cả</span>
+              </div>
+            </div>
+
+            <div class="builder-menu-addnew-element-header">
+              <li class="no-select" translate="">Assets</li>
+              <li
+                ng-click="clickLoadMoreAssets($event)"
+                class="no-select builder-button-link last"
+                translate=""
+              >
+                Quản lý Assets
+              </li>
+            </div>
+            <div
+              class="builder-menu-addnew-element-content builder-menu-addnew-element-list option-suggest-scroll"
+            ></div>
+          </div>
+        </div>
+
+        <div class="builder-menu-addnew-element">
+          <div
+            ng-style="styleAddNewContentElement()"
+            class="builder-menu-addnew-content"
+            style="height: calc(100vh - 57px)"
+          >
+            <div
+              class="builder-menu-addnew-element-tag"
+              [class]="vm.selectMenu.elementItemActive"
+            >
+              <ng-container *ngFor="let item of elementList">
+                <ng-container *ngIf="item.dataShortcutMenu">
+                  <div
+                    [attr.data-shortcut-element]="item.type"
+                    (click)="clickElement(item.type)"
+                    class="builder-menu-addnew-element-tag-item"
+                    [ngClass]="{
+                      selected: item.type === vm.selectMenu.elementItemActive
+                    }"
+                  >
+                    <i class="builder-icon" [class]="item.type"></i>
+                    <span translate="">{{ item.label }}</span>
+                  </div>
+                </ng-container>
+                <ng-container *ngIf="!item.dataShortcutMenu">
+                  <div
+                    (click)="clickElement(item.type)"
+                    class="builder-menu-addnew-element-tag-item"
+                    [ngClass]="{
+                      selected: item.type === vm.selectMenu.elementItemActive
+                    }"
+                  >
+                    <i class="builder-icon" [class]="item.type"></i>
+                    <span translate="">{{ item.label }}</span>
+                  </div>
+                </ng-container>
+              </ng-container>
+            </div>
+
+            <div class="builder-menu-addnew-element-box">
+              <div
+                data-element="image"
+                data-tab="ladipage"
+                data-group=""
+                class="builder-menu-addnew-element-header"
+              >
+                <li
+                  data-tab="ladipage"
+                  ng-click="clickTabElementImage($event)"
+                  class="selected"
+                  translate=""
+                >
+                  Ảnh
+                </li>
+                <li
+                  data-tab="FREE"
+                  ng-click="clickTabElementImageFree($event)"
+                  translate=""
+                >
+                  Ảnh miễn phí
+                </li>
+                <li
+                  data-tab="Illustration"
+                  ng-click="clickTabElementImageIllustration($event)"
+                  translate=""
+                >
+                  Ảnh minh hoạ
+                </li>
+                <li
+                  ng-click="clickLoadMoreElementImage($event)"
+                  class="no-select builder-button-link last"
+                  translate=""
+                >
+                  Xem thêm
+                </li>
+              </div>
+              <div
+                data-element="gallery"
+                data-tab="gallery"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="gallery" class="no-select" translate="">
+                  Gallery
+                </li>
+              </div>
+              <div
+                data-element="box"
+                data-tab="box"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="box" class="no-select" translate="">Hình hộp</li>
+              </div>
+              <div
+                data-element="collection"
+                data-tab="collection"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="collection" class="no-select" translate="">
+                  Collection List
+                </li>
+              </div>
+              <div
+                data-element="carousel"
+                data-tab="carousel"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="carousel" class="no-select" translate="">
+                  Carousel
+                </li>
+              </div>
+              <div
+                data-element="tabs"
+                data-tab="tabs"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="tabs" class="no-select" translate="">Tabs</li>
+              </div>
+              <div
+                data-element="form"
+                data-tab="form"
+                class="builder-menu-addnew-element-header"
+              >
+                <li
+                  data-tab="form"
+                  ng-click="clickTabElementForm($event)"
+                  class="selected"
+                  translate=""
+                >
+                  Form
+                </li>
+
+                <li
+                  ng-if="!is_editor_banner &amp;&amp; !is_editor_popupx"
+                  ng-click="clickTabElementFormLogin($event)"
+                  data-tab="form_login"
+                  translate=""
+                >
+                  Form Login
+                </li>
+
+                <li
+                  ng-if="!is_editor_banner"
+                  ng-click="clickTabElementFormOtp($event)"
+                  data-tab="form_otp"
+                  translate=""
+                >
+                  Form OTP
+                </li>
+              </div>
+              <div
+                data-element="frame"
+                data-tab="frame"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="frame" class="no-select" translate="">Frame</li>
+              </div>
+              <div
+                data-element="accordion"
+                data-tab="accordion"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="accordion" class="no-select" translate="">
+                  Accordion
+                </li>
+              </div>
+              <div
+                data-element="table"
+                data-tab="table"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="table" class="no-select" translate="">Table</li>
+              </div>
+              <div
+                data-element="survey"
+                data-tab="survey"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="survey" class="no-select" translate="">Survey</li>
+              </div>
+              <div
+                data-element="html_code"
+                data-tab="html_code"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="html_code" class="no-select" translate="">
+                  Mã HTML
+                </li>
+              </div>
+              <div
+                data-element="button"
+                data-tab="button"
+                class="builder-menu-addnew-element-header"
+              >
+                <li
+                  data-tab="button"
+                  ng-click="clickTabElementButton($event)"
+                  class="selected"
+                  translate=""
+                >
+                  Nút bấm
+                </li>
+
+                <li
+                  ng-if="!is_editor_banner"
+                  data-tab="button_group"
+                  ng-click="clickTabElementButtonGroup($event)"
+                  translate=""
+                >
+                  Nhóm nút bấm
+                </li>
+              </div>
+              <div
+                data-element="headline"
+                data-tab="headline"
+                class="builder-menu-addnew-element-header"
+              >
+                <li
+                  data-tab="headline"
+                  ng-click="clickTabElementHeadline($event)"
+                  class="selected"
+                  translate=""
+                >
+                  Tiêu đề
+                </li>
+                <li
+                  data-tab="paragraph"
+                  ng-click="clickTabElementParagraph($event)"
+                  translate=""
+                >
+                  Đoạn văn
+                </li>
+                <li
+                  data-tab="list_paragraph"
+                  ng-click="clickTabElementListParagraph($event)"
+                  translate=""
+                >
+                  Danh sách
+                </li>
+              </div>
+              <div
+                data-element="line"
+                data-tab="line"
+                class="builder-menu-addnew-element-header"
+              >
+                <li
+                  data-tab="line"
+                  ng-click="clickTabElementLine($event)"
+                  class="selected"
+                  translate=""
+                >
+                  Đường kẻ
+                </li>
+                <li
+                  data-tab="pen_tool"
+                  ng-click="clickTabElementPenTool($event)"
+                  translate=""
+                >
+                  Pen Tool
+                </li>
+              </div>
+              <div
+                data-element="shape"
+                data-tab="Socials"
+                class="builder-menu-addnew-element-header"
+              >
+                <li
+                  data-tab="Socials"
+                  ng-click="clickTabElementShapeSocials($event)"
+                  class="selected"
+                  translate=""
+                >
+                  Socials
+                </li>
+                <li
+                  data-tab="Icons"
+                  ng-click="clickTabElementShapeIcons($event)"
+                  translate=""
+                >
+                  Icons
+                </li>
+                <li
+                  data-tab="Premium Icons"
+                  ng-click="clickTabElementShapePremium($event)"
+                  translate=""
+                >
+                  Premium
+                </li>
+                <li
+                  ng-click="clickLoadMoreElementShape($event)"
+                  class="no-select builder-button-link last"
+                  translate=""
+                >
+                  Xem thêm
+                </li>
+              </div>
+              <div
+                data-element="video"
+                data-tab="video"
+                class="builder-menu-addnew-element-header"
+              >
+                <li data-tab="video" class="no-select" translate="">Video</li>
+                <li
+                  ng-click="clickLoadMoreElementVideo($event)"
+                  class="no-select builder-button-link last"
+                  translate=""
+                >
+                  Xem thêm
+                </li>
+              </div>
+              <div
+                data-element="image"
+                menu-element-image=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list option-suggest-scroll"
+              >
+                <div
+                  ng-class="classSearch()"
+                  class="builder-menu-addnew-element-search has-button"
+                >
+                  <input
+                    ng-keydown="$event.keyCode === 13 &amp;&amp; search()"
+                    ng-change="changeTextSearch()"
+                    ng-model="textSearch"
+                    class="ladiui form-control ng-pristine ng-untouched ng-valid ng-empty"
+                    type="text"
+                    placeholder="Tìm kiếm..."
+                  />
+                  <i
+                    ng-click="search($event)"
+                    class="builder-icon search background-secondary tooltip"
+                  >
+                    <span
+                      class="tooltiptext left"
+                      tooltiptext="Tìm kiếm"
+                    ></span>
+                  </i>
+
+                  <button
+                    ng-click="clickUploadFile($event)"
+                    type="button"
+                    class="builder-btn-second builder-button-upload-file btn-32 ladiui btn btn-primary"
+                  >
+                    <i class="builder-icon background-white add"></i>
+                    <span translate="">Chọn tệp</span>
+                  </button>
+                </div>
+                <div
+                  ng-show="showGroup()"
+                  class="builder-menu-addnew-element-image-tag"
+                >
+                  <div
+                    menu-element-image-group-item=""
+                    ng-class="classItem()"
+                    ng-click="changeTag($event)"
+                    class="builder-menu-addnew-element-image-tag-item selected"
+                    ng-repeat="item in list_group_show"
+                  >
+                    <span ng-if="!item.is_load_more">Tất cả</span>
+                  </div>
+                </div>
+                <div class="builder-menu-addnew-element-image-img" style="">
+                  <div
+                    menu-element-image-item=""
+                    ng-class="classItem()"
+                    ng-click="clickItem($event)"
+                    ng-dblclick="dbClickItem($event)"
+                    class="builder-menu-addnew-element-image-img-item"
+                    ng-repeat="file in list_file | filter:searchImageFilter"
+                  >
+                    <img
+                      alt="processed (1).jpeg"
+                      title="processed (1).jpeg"
+                      ng-src="https://w.ladicdn.com/s250x250/5e96d4d287452449346dfb69/processed-1-20210629032053.jpeg"
+                      src="https://w.ladicdn.com/s250x250/5e96d4d287452449346dfb69/processed-1-20210629032053.jpeg"
+                    />
+                    <span title="processed (1).jpeg">processed (1).jpeg</span>
+                  </div>
+
+                  <div
+                    menu-element-image-item=""
+                    ng-class="classItem()"
+                    ng-click="clickItem($event)"
+                    ng-dblclick="dbClickItem($event)"
+                    class="builder-menu-addnew-element-image-img-item"
+                    ng-repeat="file in list_file | filter:searchImageFilter"
+                  >
+                    <img
+                      alt="photo1624276586.jpeg"
+                      title="photo1624276586.jpeg"
+                      ng-src="https://w.ladicdn.com/s250x250/5e96d4d287452449346dfb69/photo1624276586-20210629025711.jpeg"
+                      src="https://w.ladicdn.com/s250x250/5e96d4d287452449346dfb69/photo1624276586-20210629025711.jpeg"
+                    />
+                    <span title="photo1624276586.jpeg"
+                      >photo1624276586.jpeg</span
+                    >
+                  </div>
+                </div>
+                <div class="builder-menu-addnew-element-image-button-use">
+                  <button
+                    class="ladiui btn btn-32 btn-primary"
+                    ng-click="clickUseImage($event)"
+                    translate=""
+                  >
+                    Sử dụng
+                  </button>
+                </div>
+
+                <script type="text/javascript">
+                  (function () {
+                    var doc = document.querySelector(
+                      '.builder-menu-addnew-element-image-img',
+                    );
+                    LadiPage.runtime.tmp.observer5 = new ResizeObserver(
+                      function () {
+                        doc.style.removeProperty('padding-right');
+                        if (doc.scrollHeight != doc.clientHeight) {
+                          doc.style.setProperty(
+                            'padding-right',
+                            (parseFloatLadiPage(
+                              getComputedStyle(doc).paddingRight,
+                            ) || 0) -
+                              LadiPage.runtime.scrollbar_size +
+                              'px',
+                          );
+                        }
+                      },
+                    );
+                    LadiPage.runtime.tmp.observer5.observe(doc);
+                  })();
+                </script>
+              </div>
+              <div
+                data-element="gallery"
+                menu-element-gallery=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+                style=""
+              >
+                <div
+                  id="assets-group-type-gallery"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Gallery</span
+                  >
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item gallery"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/dfi3scxx6t20220815081753.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/dfi3scxx6t20220815081753.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item gallery"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/mdxrjpkwxh20220815081808.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/mdxrjpkwxh20220815081808.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item gallery"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/0mrxlm_0uo20220815081825.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/0mrxlm_0uo20220815081825.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item gallery"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/79qig8ptiu20220815081839.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/79qig8ptiu20220815081839.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                data-element="box"
+                menu-element-box=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+                style=""
+              >
+                <div
+                  id="assets-group-type-box"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Hình hộp</span
+                  >
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/q8sugplrls20220912021939.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/q8sugplrls20220912021939.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/wjpkkyhuy-20220912021955.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/wjpkkyhuy-20220912021955.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/slj5x9l5ii20220912022012.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/slj5x9l5ii20220912022012.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/faf1pz0ila20220912022023.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/faf1pz0ila20220912022023.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/55hvm-sve120220912022121.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/55hvm-sve120220912022121.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/yaoyzjyz0220220912022136.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/yaoyzjyz0220220912022136.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/2ukypomiel20220912022306.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/2ukypomiel20220912022306.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/0pc5p2ujxl20220912022319.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/0pc5p2ujxl20220912022319.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/p3skbnlzr020220912022331.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/p3skbnlzr020220912022331.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/48y02fop-f20220912022342.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/48y02fop-f20220912022342.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/shyai6z_4z20220912022354.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/shyai6z_4z20220912022354.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item box"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/nxztbpqqw-20220912022404.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/nxztbpqqw-20220912022404.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                data-element="form"
+                menu-element-form=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-form"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate="">Form</span>
+                </div>
+
+                <div
+                  id="assets-group-type-form-login"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Form Login</span
+                  >
+                </div>
+
+                <div
+                  id="assets-group-type-form-otp"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Form OTP</span
+                  >
+                </div>
+              </div>
+              <div
+                data-element="button"
+                menu-element-button=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+                style=""
+              >
+                <div
+                  id="assets-group-type-button"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Nút bấm</span
+                  >
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/mdxviizdd920221012020340.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/mdxviizdd920221012020340.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/guvc7jnpnk20221012025033.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/guvc7jnpnk20221012025033.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/sfbq39ua5m20221012025044.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/sfbq39ua5m20221012025044.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/srqvcpbmz720221012025056.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/srqvcpbmz720221012025056.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/76na3rm1gf20221012025106.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/76na3rm1gf20221012025106.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/gjb5v65pgh20221012025117.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/gjb5v65pgh20221012025117.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/z4jt9uotfa20221012025129.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/z4jt9uotfa20221012025129.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/wptc1x2vkp20221012025141.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/wptc1x2vkp20221012025141.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/0ehffb9fyg20221012025155.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/0ehffb9fyg20221012025155.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/lupptuvi3x20221012025208.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/lupptuvi3x20221012025208.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/7_06kql6qf20221012025219.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/7_06kql6qf20221012025219.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/6pewg3f8uu20221012025231.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/6pewg3f8uu20221012025231.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/iyiazfd76w20221012025242.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/iyiazfd76w20221012025242.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/3d_gw7tfhj20221012025253.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/3d_gw7tfhj20221012025253.svg"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  id="assets-group-type-button-group"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Nhóm nút bấm</span
+                  >
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/fer9urz2l820220815044113.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/fer9urz2l820220815044113.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/zeihy3_7t520220815044134.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/zeihy3_7t520220815044134.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/r43hh_wpvh20220815044148.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/r43hh_wpvh20220815044148.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/v3b-pozwbt20220815044202.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/v3b-pozwbt20220815044202.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/u2l7qjwvj-20220815044216.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/u2l7qjwvj-20220815044216.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/lyndb7hx-220220815044230.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/lyndb7hx-220220815044230.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/xnmbkkwvt720220815044245.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/xnmbkkwvt720220815044245.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/t5rfjetgeu20220815044302.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/t5rfjetgeu20220815044302.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/aqxfmujrx920220815044325.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/aqxfmujrx920220815044325.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/l-mpnfhdew20220815044344.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/l-mpnfhdew20220815044344.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item button"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/kv12wlxmz720220815044414.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/kv12wlxmz720220815044414.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                data-element="headline"
+                menu-element-headline=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+                style=""
+              >
+                <div
+                  id="assets-group-type-headline"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Tiêu đề</span
+                  >
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item headline"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/yok-ogeccf20220822031258.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/yok-ogeccf20220822031258.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item headline"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/3oyumol4we20220822031318.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/3oyumol4we20220822031318.svg"
+                    />
+                  </div>
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item headline"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/zb-yjn2kzs20220822031340.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/zb-yjn2kzs20220822031340.svg"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  id="assets-group-type-paragraph"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Đoạn văn</span
+                  >
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item headline"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/w43cj0ouog20220912032703.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/w43cj0ouog20220912032703.svg"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  id="assets-group-type-list-paragraph"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Danh sách</span
+                  >
+
+                  <div
+                    ng-click="clickItem($event, item)"
+                    class="builder-menu-addnew-element-assets-item headline"
+                    ng-repeat="item in listTemplateByTab[itemTab.type]"
+                  >
+                    <img
+                      ng-src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/lj3tnei8a220220928091323.svg"
+                      src="https://w.ladicdn.com/57b167c9ca57d39c18a1c57c/lj3tnei8a220220928091323.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                data-element="line"
+                menu-element-line=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-line"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Đường kẻ</span
+                  >
+                </div>
+
+                <div
+                  id="assets-group-type-pen-tool"
+                  class="builder-menu-addnew-element-assets-group"
+                >
+                  <span translate="">Pen Tool</span>
+
+                  <div
+                    ng-click="clickPenTool($event)"
+                    class="builder-menu-addnew-element-assets-pen-tool"
+                  >
+                    <i class="builder-icon pen_tool background-secondary"></i>
+                    <span translate="">Sử dụng Pen Tool</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-element="shape"
+                menu-element-shape=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list element option-suggest-scroll"
+              >
+                <div class="builder-menu-addnew-element-search shape">
+                  <input
+                    ng-keydown="$event.keyCode === 13 &amp;&amp; search()"
+                    ng-model="textSearch"
+                    class="ladiui form-control ng-pristine ng-untouched ng-valid ng-empty"
+                    type="text"
+                    placeholder="Tìm kiếm..."
+                  />
+                  <i
+                    ng-click="search($event)"
+                    class="builder-icon search background-secondary tooltip"
+                  >
+                    <span
+                      class="tooltiptext left"
+                      tooltiptext="Tìm kiếm"
+                    ></span>
+                  </i>
+                </div>
+
+                <div class="builder-menu-addnew-element-scroll-shape">
+                  <div
+                    id="assets-group-type-shape-socials"
+                    ng-show="showTab(itemTab.type)"
+                    ng-class="itemTab.className"
+                    class="builder-menu-addnew-element-assets-group ng-hide shape socials"
+                    ng-repeat="itemTab in list_tab"
+                  >
+                    <span
+                      ng-class="itemTab.classTitle"
+                      translate=""
+                      class="shape"
+                      >Socials</span
+                    >
+                  </div>
+
+                  <div
+                    id="assets-group-type-shape-icons"
+                    ng-show="showTab(itemTab.type)"
+                    ng-class="itemTab.className"
+                    class="builder-menu-addnew-element-assets-group ng-hide shape"
+                    ng-repeat="itemTab in list_tab"
+                  >
+                    <span
+                      ng-class="itemTab.classTitle"
+                      translate=""
+                      class="shape"
+                      >Icons</span
+                    >
+                  </div>
+
+                  <div
+                    id="assets-group-type-shape-premium"
+                    ng-show="showTab(itemTab.type)"
+                    ng-class="itemTab.className"
+                    class="builder-menu-addnew-element-assets-group ng-hide shape"
+                    ng-repeat="itemTab in list_tab"
+                  >
+                    <span
+                      ng-class="itemTab.classTitle"
+                      translate=""
+                      class="shape"
+                      >Premium</span
+                    >
+                  </div>
+
+                  <div
+                    id="assets-group-type-shape-arrows"
+                    ng-show="showTab(itemTab.type)"
+                    ng-class="itemTab.className"
+                    class="builder-menu-addnew-element-assets-group ng-hide shape"
+                    ng-repeat="itemTab in list_tab"
+                  >
+                    <span
+                      ng-class="itemTab.classTitle"
+                      translate=""
+                      class="shape"
+                      >Arrows</span
+                    >
+                  </div>
+
+                  <div
+                    id="assets-group-type-shape-pattern"
+                    ng-show="showTab(itemTab.type)"
+                    ng-class="itemTab.className"
+                    class="builder-menu-addnew-element-assets-group ng-hide shape"
+                    ng-repeat="itemTab in list_tab"
+                  >
+                    <span
+                      ng-class="itemTab.classTitle"
+                      translate=""
+                      class="shape"
+                      >Pattern</span
+                    >
+                  </div>
+
+                  <div
+                    id="assets-group-type-shape-background"
+                    ng-show="showTab(itemTab.type)"
+                    ng-class="itemTab.className"
+                    class="builder-menu-addnew-element-assets-group ng-hide shape"
+                    ng-repeat="itemTab in list_tab"
+                  >
+                    <span
+                      ng-class="itemTab.classTitle"
+                      translate=""
+                      class="shape"
+                      >Background</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                data-element="video"
+                menu-element-video=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-video"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate="">Video</span>
+                </div>
+              </div>
+              <div
+                data-element="collection"
+                menu-element-collection=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-collection"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Collection List</span
+                  >
+                </div>
+              </div>
+              <div
+                data-element="carousel"
+                menu-element-carousel=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-carousel"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Carousel</span
+                  >
+                </div>
+              </div>
+              <div
+                data-element="frame"
+                menu-element-frame=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-frame"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate="">Frame</span>
+                </div>
+              </div>
+              <div
+                data-element="accordion"
+                menu-element-accordion=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-accordion"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Accordion</span
+                  >
+                </div>
+              </div>
+              <div
+                data-element="table"
+                menu-element-table=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-table"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate="">Table</span>
+                </div>
+              </div>
+              <div
+                data-element="survey"
+                menu-element-survey=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-survey"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate="">Survey</span>
+                </div>
+              </div>
+              <div
+                data-element="html_code"
+                menu-element-html-code=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-html-code"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate=""
+                    >Mã HTML</span
+                  >
+                </div>
+              </div>
+              <div
+                data-element="tabs"
+                menu-element-tabs=""
+                class="builder-menu-addnew-element-content builder-menu-addnew-element-list new_element element option-suggest-scroll"
+              >
+                <div
+                  id="assets-group-type-tabs"
+                  ng-class="itemTab.className"
+                  class="builder-menu-addnew-element-assets-group one-group"
+                  ng-repeat="itemTab in list_tab"
+                >
+                  <span ng-class="itemTab.classTitle" translate="">Tabs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      *ngIf="false"
+      ng-style="styleLayer()"
+      class="builder-menu-layer ng-hide"
+      ng-show="showListLayer"
+      style="top: 56px; left: 0px; height: calc(100vh - 56px)"
+    >
+      <div class="builder-menu-layer-top">
+        <div class="builder-menu-layer-vertical-middle">
+          <span class="builder-menu-layer-title" translate="">Layer</span>
+          <span
+            ng-click="clickLayerHelp($event)"
+            class="builder-icon help builder-menu-layer-help tooltip"
+          >
+            <span class="tooltiptext top" tooltiptext="Hướng dẫn"></span>
+          </span>
+
+          <i
+            class="builder-icon close builder-menu-layer-close tooltip"
+            ng-click="closeLayer($event)"
+          ></i>
+        </div>
+      </div>
+
+      <div class="builder-menu-layer-filter">
+        <input
+          class="ladiui form-control"
+          type="text"
+          placeholder="Tìm kiếm..."
+          data-event="true"
+        />
+        <i class="builder-icon search tooltip">
+          <span class="tooltiptext top" tooltiptext="Tìm kiếm"></span>
+        </i>
+      </div>
+
+      <div class="builder-menu-layer-content"></div>
+    </div>
+
+    <div
+      cdkDrag
+      *ngIf="!vm.selectMenu.showAddNew"
+      class="builder-shortcut-all-element parent-attr-move"
+      style="top: 15vh; left: 8px"
+    >
+      <div class="builder-shortcut-all-element-left">
+        <i
+          cdkDragHandle
+          (click)="clickShortcutAllElementMove()"
+          class="item builder-icon drag builder-attribute-move"
+        ></i>
+        <div class="div-line"></div>
+        <ng-container *ngFor="let item of listShortcutMenuPrimary">
+          <i
+            (click)="
+              clickShortcutAllElement(
+                item.type,
+                vm.indexElement,
+                vm.sectionAddElement,
+                vm.device
+              )
+            "
+            [attr.data-element]="item.type"
+            class="item builder-icon tooltip cursor-pointer"
+            [class]="item.type"
+          >
+            <span
+              class="tooltiptext right"
+              [attr.tooltiptext]="item.label"
+            ></span>
+          </i>
+        </ng-container>
+
+        <i
+          (click)="
+            clickShortcutAllElementLoadMore(
+              vm.selectMenu.showShortcutAllElementRight
+            )
+          "
+          class="item builder-icon add_circle tooltip cursor-pointer"
+        >
+          <span class="tooltiptext right" tooltiptext="Xem thêm"></span>
+        </i>
+      </div>
+
+      <div
+        *ngIf="vm.selectMenu.showShortcutAllElementRight"
+        class="builder-shortcut-all-element-right"
+      >
+        <ng-container *ngFor="let item of listShortcutMenuAll">
+          <div
+            (click)="
+              clickShortcutAllElement(
+                item.type,
+                vm.indexElement,
+                vm.sectionAddElement,
+                vm.device
+              )
+            "
+            [attr.data-element]="item.type"
+            class="item cursor-pointer"
+          >
+            <i class="builder-icon" [class]="item.type"></i>
+            <span translate="">{{ item.label }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div
+      *ngIf="false"
+      class="builder-menu-left"
+      ng-style="getStyle()"
+      style="width: 0px; height: calc(100vh - 56px); overflow: hidden"
+    ></div>
+
+    <!-- <script type="text/javascript">
+      (function () {
+        function getCurrentScope(callback) {
+          if (LadiPageScript.isEmpty(LadiPage.runtime.current_scope.left_menu)) {
+            LadiPageScript.runTimeout(function () {
+              getCurrentScope(callback);
+            }, 100);
+  
+            return;
+          }
+  
+          callback(LadiPage.runtime.current_scope.left_menu);
+        }
+  
+        getCurrentScope(function (scope) {
+          scope.list_observer = [];
+  
+          var run = function (doc) {
+            var observer = new ResizeObserver(function () {
+              doc.style.removeProperty("padding-right");
+              if (doc.scrollHeight != doc.clientHeight) {
+                doc.style.setProperty(
+                  "padding-right",
+                  (parseFloatLadiPage(getComputedStyle(doc).paddingRight) || 0) -
+                    LadiPage.runtime.scrollbar_size +
+                    "px"
+                );
+              }
+            });
+            observer.observe(doc);
+  
+            scope.list_observer.push(observer);
+          };
+  
+          var run2 = function (doc) {
+            var observer = new ResizeObserver(function () {
+              doc.classList.remove("scroll");
+              if (doc.scrollHeight != doc.clientHeight) {
+                doc.classList.add("scroll");
+              }
+            });
+            observer.observe(doc);
+  
+            scope.list_observer.push(observer);
+          };
+  
+          var list = document.querySelectorAll(
+            ".builder-menu-addnew-content, .builder-menu-addnew-element-list"
+          );
+          for (var i = 0; i < list.length; i++) {
+            run(list[i]);
+          }
+  
+          list = document.getElementsByClassName(
+            "builder-menu-addnew-element-tag"
+          );
+          for (i = 0; i < list.length; i++) {
+            run2(list[i]);
+          }
+        });
+      })();
+    </script> -->
+  </div>
+</ng-container>

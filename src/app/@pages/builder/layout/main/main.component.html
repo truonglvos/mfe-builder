@@ -1,0 +1,7 @@
+<app-top-menu></app-top-menu>
+<app-left-menu
+  (addNewElement)="appBuilder.addNewElement($event)"
+></app-left-menu>
+<app-builder-editor #appBuilder></app-builder-editor>
+<app-color-editor></app-color-editor>
+<app-loading></app-loading>

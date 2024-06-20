@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -18,10 +19,16 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"],
+    "paths": {
+      "@states/*": ["src/app/@states/*"],
+      "@constants/*": ["src/app/@constants/*"],
+      "@models/*": ["src/app/@models/*"],
+      "@builder/layout/*": ["src/app/@page/builder/layout/*"],
+      "@shares/*": ["src/app/@shares/*"],
+      "@services/*": ["src/app/@services/*"],
+      "@pipes/*": ["src/app/@pipes/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -1,5 +1,5 @@
-import { CONST_DATA } from '@const/const';
-import { ELEMENT_ITEM, DEVICE } from '@const/enum';
+import { CONST_DATA } from '@constants/const';
+import { ELEMENT_ITEM, DEVICE } from '@constants/enum';
 import { copy } from '@shares/utility';
 
 export const BOX_CONST = {
@@ -114,17 +114,17 @@ export const BOX_DEFAULT_DATA = {
     selectable: !0,
   },
   [DEVICE.DESKTOP]: copy(
-    BOX_DEFAULT_DATA_DEVICE,
+    BOX_DEFAULT_DATA_DEVICE
   ) as typeof BOX_DEFAULT_DATA_DEVICE,
   [DEVICE.MOBILE]: copy(
-    BOX_DEFAULT_DATA_DEVICE,
+    BOX_DEFAULT_DATA_DEVICE
   ) as typeof BOX_DEFAULT_DATA_DEVICE,
 };
 
 export const createBox = (
   index: number,
   parent: string,
-  parent_type: string,
+  parent_type: string
 ) => {
   const element = copy(BOX_DEFAULT_DATA);
   element.id = `${BOX_CONST.PREFIX}${index}`;

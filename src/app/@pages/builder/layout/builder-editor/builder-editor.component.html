@@ -1,0 +1,334 @@
+<ng-container *ngrxLet="builderEdittor$ as vm">
+  <div
+    ng-style="getStyleBuilderEditor()"
+    id="builder-editor"
+    class="builder-editor"
+    style="height: calc(100vh - 56px); width: 100%"
+    (scroll)="scrollBuilderEditor(vm.device)"
+  >
+    <div
+      id="builder-mouse-hold"
+      [ngClass]="{
+        'ladi-hidden': !vm.builder.mouseMoveSelected
+      }"
+      class="builder-mouse-hold"
+      [style.top.px]="vm.builder.builderMouseHold.top - 56"
+      [style.left.px]="vm.builder.builderMouseHold.left"
+      [style.width.px]="vm.builder.builderMouseHold.width"
+      [style.height.px]="vm.builder.builderMouseHold.height"
+    ></div>
+    <div
+      id="builder-group-tmp"
+      data-id="GROUP_TMP"
+      class="builder-group-tmp ladi-hidden"
+      [ngClass]="{
+        'ladi-hidden': !vm.builder.groupTMP.show
+      }"
+      [style.top.px]="vm.builder.groupTMP.top"
+      [style.left.px]="vm.builder.groupTMP.left"
+      [style.width.px]="vm.builder.groupTMP.width"
+      [style.height.px]="vm.builder.groupTMP.height"
+    >
+      <div class="ladi-resize ladi-n-resize">
+        <div class="ladi-resize-display"></div>
+      </div>
+      <div class="ladi-resize ladi-s-resize">
+        <div class="ladi-resize-display"></div>
+      </div>
+      <div class="ladi-resize ladi-w-resize">
+        <div class="ladi-resize-display"></div>
+      </div>
+      <div class="ladi-resize ladi-e-resize">
+        <div class="ladi-resize-display"></div>
+      </div>
+      <div class="ladi-resize ladi-ne-resize">
+        <div class="ladi-resize-display"></div>
+      </div>
+      <div class="ladi-resize ladi-nw-resize">
+        <div class="ladi-resize-display"></div>
+      </div>
+      <div class="ladi-resize ladi-se-resize">
+        <div class="ladi-resize-display"></div>
+      </div>
+      <div class="ladi-resize ladi-sw-resize">
+        <div class="ladi-resize-display"></div>
+      </div>
+    </div>
+
+    <div id="builder-container" class="builder-container ladi-wraper">
+      <ng-container
+        *ngFor="let section of vm.selectBuilderElements; index as index"
+      >
+        <div
+          [attr.id]="section.id"
+          class="ladi-section"
+          [ngStyle]="{
+            height: vm.isDesktop
+              ? vm.elements[section.id].desktop?.style?.height
+              : vm.elements[section.id].mobile?.style?.height
+          }"
+        >
+          <div class="ladi-section-background"></div>
+          <div class="ladi-overlay"></div>
+          <div class="ladi-container">
+            <ng-container *ngFor="let element of section.childs">
+              <ng-container [ngSwitch]="vm.elements[element.id].type">
+                <!-- <ng-container *ngSwitchCase="elementItem.HEADLINE"> -->
+                <div
+                  (mouseenter)="elementMouseEnter(element.id)"
+                  (mouseleave)="elementMouseLeave(element.id)"
+                  class="ladi-element"
+                  [attr.id]="element.id"
+                  [style]="
+                    vm.elements[element.id][vm.device.deviceScreen]?.style
+                      | getStyle
+                        : vm.elements[element.id].type
+                        : ['width', 'top', 'left', 'height']
+                        : false
+                  "
+                >
+                  <ng-container *ngSwitchCase="elementItem.HEADLINE">
+                    <app-headline-element
+                      [styleString]="
+                        vm.elements[element.id][vm.device.deviceScreen]?.style
+                          | getStyle : vm.elements[element.id].type : []
+                      "
+                      [innerHTML]="
+                        vm.elements[element.id].option?.innerHTML || ''
+                      "
+                      [elementId]="element.id"
+                    >
+                    </app-headline-element>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="elementItem.BOX">
+                    <app-box-element
+                      [styleString]="
+                        vm.elements[element.id][vm.device.deviceScreen]?.style
+                          | getStyle : vm.elements[element.id].type : []
+                      "
+                    >
+                    </app-box-element>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="elementItem.BUTTON">
+                    <app-button-element></app-button-element>
+                  </ng-container>
+                  <ng-container
+                    *ngIf="element.id === vm.builder.elementSelected"
+                  >
+                    <ng-container
+                      *ngFor="
+                        let item of ladiResize
+                          | getTypeResize : vm.elements[element.id].type
+                      "
+                    >
+                      <div
+                        data-locked="false"
+                        class="ladi-resize"
+                        [class]="[item, vm.elements[element.id].type]"
+                      >
+                        <div class="ladi-resize-display"></div>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                  <div
+                    *ngIf="
+                      element.id === vm.builder.elementHovered &&
+                      element.id !== vm.builder.elementSelected
+                    "
+                    [attr.data-id]="element.id"
+                    data-locked="false"
+                    class="ladi-hover"
+                  ></div>
+                  <div
+                    *ngIf="element.id | itemInArray : vm.listElementGroupTmp"
+                    [attr.data-id]="element.id"
+                    data-locked="false"
+                    class="ladi-hover ladi-hold"
+                  ></div>
+                  <div
+                    *ngIf="element.id === vm.builder.elementSelected"
+                    [attr.data-id]="element.id"
+                    data-locked="false"
+                    class="ladi-selected ladi-size"
+                  ></div>
+                </div>
+                <!-- </ng-container> -->
+              </ng-container>
+            </ng-container>
+          </div>
+          <div
+            [attr.data-id]="section.id"
+            data-locked="false"
+            class="ladi-selected ladi-size"
+          ></div>
+          <div
+            *ngIf="vm.builder.sectionSelected === section.id && index !== 0"
+            data-locked="false"
+            class="ladi-resize ladi-n-resize section"
+          >
+            <div class="ladi-button-add-section ladi-font-default">
+              Thêm mới Section
+            </div>
+            <div class="ladi-resize-display">
+              <i
+                class="builder-icon split_vertical background-black icon-cross-vertical ladi-resize-display-icon"
+                style="width: 14px; height: 14px"
+              ></i>
+            </div>
+          </div>
+          <div
+            *ngIf="vm.builder.sectionSelected === section.id"
+            data-locked="false"
+            class="ladi-resize ladi-s-resize section"
+          >
+            <div
+              (click)="addNewSection(vm.indexElement, index)"
+              (mousedown)="$event.stopPropagation()"
+              class="ladi-button-add-section ladi-font-default"
+            >
+              Thêm mới Section
+            </div>
+            <div
+              (mousedown)="
+                $event.stopPropagation();
+                resizeSectionDown(
+                  $event,
+                  section.id,
+                  vm.isDesktop,
+                  typeDrag.RESIZE_SECTION
+                )
+              "
+              class="ladi-resize-display"
+            >
+              <i
+                class="builder-icon split_vertical background-black icon-cross-vertical ladi-resize-display-icon"
+                style="width: 14px; height: 14px"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div
+      ng-show="!isNoSection"
+      (click)="sectionClickOut()"
+      class="builder-container-padding"
+      style="height: 300px; margin-top: -300px"
+    ></div>
+    <div id="builder-preview" class="ladi-hidden"></div>
+
+    <div
+      *ngIf="!vm.isHasSection"
+      (click)="addNewSection(vm.indexElement, 0)"
+      class="builder-button-no-section"
+    >
+      Thêm mới Section
+    </div>
+
+    <div id="builder-rotate-text" class="builder-rotate-text ladi-hidden"></div>
+    <div
+      class="builder-rotate-doc ladi-hidden"
+      id="builder-rotate-doc"
+      data-id="BUTTON12"
+      style="top: 243.5px; left: 706px"
+    >
+      <i
+        class="ladi-rotate-icon builder-icon transform_rotate background-black"
+      ></i>
+    </div>
+
+    <div id="backdrop-popup" class="backdrop-popup"></div>
+    <div id="lightbox-screen" class="lightbox-screen"></div>
+    <div id="builder-snap-grid" class="builder-grid ladi-hidden"></div>
+    <app-quick-editor></app-quick-editor>
+
+    <!-- <div ui-view="section-editor">
+      <div id="builder-section-editor" data-section-id="SECTION14" class="builder-section-editor"
+        ng-show="hasSelectedSection" style="top: 135.2px">
+        <ul>
+          <li class="builder-icon setting_outline tooltip" ng-click="clickAttribute($event)">
+            <span class="tooltiptext right" tooltiptext="Thiết lập"></span>
+          </li>
+          <li class="builder-icon help tooltip" ng-click="clickSectionDocument($event)">
+            <span class="tooltiptext right" tooltiptext="Hướng dẫn"></span>
+          </li>
+
+          <li ng-if="!isSectionGlobal" class="builder-icon save tooltip" ng-click="saveSection($event)">
+            <span class="tooltiptext right" tooltiptext="Lưu Section"></span>
+          </li>
+
+          <li class="builder-icon up tooltip" ng-click="upIndexSection($event)">
+            <span class="tooltiptext right" tooltiptext="Lên trên (CTRL + ⬆)"></span>
+          </li>
+          <li class="builder-icon down tooltip" ng-click="downIndexSection($event)">
+            <span class="tooltiptext right" tooltiptext="Xuống dưới (CTRL + ⬇)"></span>
+          </li>
+          <li ng-if="showHidden &amp;&amp; (!isSectionGlobal || isEditSection)" class="builder-icon eye_hide tooltip"
+            ng-click="clickHiddenSection($event)">
+            <span class="tooltiptext right" tooltiptext="Ẩn Section"></span>
+          </li>
+
+          <li class="builder-icon duplicate tooltip" ng-click="duplicateSection($event)">
+            <span class="tooltiptext right" tooltiptext="Nhân bản (CTRL + D)"></span>
+          </li>
+          <li ng-if="showSortMobile() &amp;&amp; (!isSectionGlobal || isEditSection)"
+            class="builder-icon sort_mobile tooltip" ng-click="sortMobileSection($event)">
+            <span class="tooltiptext right" tooltiptext="Tự động sắp xếp Mobile"></span>
+          </li>
+          <li class="builder-icon delete background-danger tooltip" ng-click="deleteSection($event)">
+            <span class="tooltiptext right" tooltiptext="Xoá (DEL)"></span>
+          </li>
+        </ul>
+
+        <div ng-show="showAddNew" class="menu-left-open ng-hide"></div>
+      </div>
+    </div> -->
+
+    <div
+      id="builder-snap-top"
+      [ngClass]="{
+        'ladi-hidden': !vm.builderSnapHorizontal.show
+      }"
+      [style.top.px]="vm.builderSnapHorizontal.top"
+      class="builder-snap ladi-hidden"
+      style="min-width: 1086px; left: 0px; width: calc(100% - 4px)"
+    ></div>
+    <div
+      id="builder-snap-left"
+      [ngClass]="{
+        'ladi-hidden': !vm.builderSnapVertical.show
+      }"
+      [style.left.px]="vm.builderSnapVertical.left"
+      class="builder-snap"
+      style="top: 56px; height: calc(100% - 56px)"
+    ></div>
+    <div
+      id="builder-snap-bottom"
+      [style.left.px]="vm.builderSnapVertical.left"
+      [style.top.px]="vm.builderSnapVertical.top"
+      [style.height.px]="vm.builderSnapVertical.height"
+      [ngStyle]="{
+        display: vm.builderSnapVertical.show ? 'block' : 'none'
+      }"
+      class="builder-snap builder-snap-height"
+    >
+      <span class="builder-snap-pixel">{{
+        vm.builderSnapVertical.height
+      }}</span>
+    </div>
+    <div
+      id="builder-snap-right"
+      class="builder-snap builder-snap-width"
+      [style.top.px]="vm.builderSnapHorizontal.top"
+      [style.left.px]="vm.builderSnapHorizontal.left"
+      [style.width.px]="vm.builderSnapHorizontal.width"
+      [ngStyle]="{
+        display: vm.builderSnapHorizontal.show ? 'block' : 'none'
+      }"
+    >
+      <span class="builder-snap-pixel">
+        {{ vm.builderSnapHorizontal.width }}
+      </span>
+    </div>
+  </div>
+</ng-container>

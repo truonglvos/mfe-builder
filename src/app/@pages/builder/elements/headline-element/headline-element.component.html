@@ -1,0 +1,8 @@
+<ng-container *ngrxLet="elementEditable$ as elementEditable">
+  <h3
+    class="ladi-headline"
+    [innerHTML]="innerHTML | safe : 'html'"
+    [attr.contenteditable]="elementEditable === elementId"
+    [style]="styleString"
+  ></h3>
+</ng-container>

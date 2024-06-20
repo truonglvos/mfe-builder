@@ -1,5 +1,5 @@
-import { CONST_DATA } from '@const/const';
-import { ELEMENT_ITEM, DEVICE } from '@const/enum';
+import { CONST_DATA } from '@constants/const';
+import { ELEMENT_ITEM, DEVICE } from '@constants/enum';
 import { copy } from '@shares/utility';
 
 export const SHAPE_CONST = {
@@ -128,17 +128,17 @@ export const SHAPE_DEFAULT_DATA = {
     equals_parent_id: !1,
   },
   [DEVICE.DESKTOP]: copy(
-    SHAPE_DEFAULT_DATA_DEVICE,
+    SHAPE_DEFAULT_DATA_DEVICE
   ) as typeof SHAPE_DEFAULT_DATA_DEVICE,
   [DEVICE.MOBILE]: copy(
-    SHAPE_DEFAULT_DATA_DEVICE,
+    SHAPE_DEFAULT_DATA_DEVICE
   ) as typeof SHAPE_DEFAULT_DATA_DEVICE,
 };
 
 export const createShape = (
   index: number,
   parent: string,
-  parent_type: string,
+  parent_type: string
 ) => {
   const element = copy(SHAPE_DEFAULT_DATA);
   element.id = `${SHAPE_CONST.PREFIX}${index}`;
