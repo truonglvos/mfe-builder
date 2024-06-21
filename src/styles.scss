@@ -2,7 +2,3712 @@
 @use "tailwindcss/base";
 @use "tailwindcss/components";
 @use "tailwindcss/utilities";
-// @use "index";
+
+// CSS variable
+
+.ladiui i.icon.white {
+  pointer-events: none;
+  background: var(--main-white);
+}
+
+.ladiui i.icon.danger {
+  pointer-events: none;
+  background: var(--danger-color);
+}
+
+.ladiui i.icon.info {
+  pointer-events: none;
+  background: var(--info-color);
+}
+
+.ladiui i.icon.success {
+  pointer-events: none;
+  background: var(--success-color);
+}
+
+.ladiui i.icon.warning {
+  pointer-events: none;
+  background: var(--warning-color);
+}
+
+.ladiui i.icon.black {
+  pointer-events: none;
+  background: var(--main-default);
+}
+
+.ladiui i.icon.primary {
+  pointer-events: none;
+  background: var(--main-primary);
+}
+
+.ladiui i.icon.text-color {
+  pointer-events: none;
+  background: var(--main-secondary) !important;
+}
+
+.ladiui.icon {
+  pointer-events: none;
+  background-color: var(--main-default);
+}
+
+.ladiui.icon-ldp-dot {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-more.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-more.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-noti-tick {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-noti-tick.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-noti-tick.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-date-time-picker {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-image: url(https://w.ladicdn.com/ladiui/icons/icon-date-time-picker.svg);
+  background-color: inherit;
+  background-size: cover;
+}
+
+.ladiui.icon-ldp-computer {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-computer.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-computer.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-drag {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-drag.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-drag.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-help {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-help.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-help.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-ssl {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-ssl.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-ssl.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-url {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-url.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-url.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-noti-campain {
+  pointer-events: none;
+  background-color: var(--main-white);
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-noti-campain.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-noti-campain.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-noti-format {
+  pointer-events: none;
+  background-color: var(--main-white);
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-noti-format.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-noti-format.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-jampage {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-jampage.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-jampage.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-boxfile {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-boxfile.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-boxfile.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-design {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-design.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-design.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-template {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-template.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-template.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-country-vn {
+  pointer-events: none;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-country-vn.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-country-vn.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-helper-document {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-helper-document.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-helper-document.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-log-out {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-log-out.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-log-out.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-account-check {
+  pointer-events: none;
+  background-color: inherit;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-account-check.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-account-check.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-introduce-sign-up {
+  pointer-events: none;
+  background-color: inherit;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-introduce-sign-up.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-introduce-sign-up.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-camera {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-camera.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-camera.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-keyboard {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-keyboard.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-keyboard.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-fb-group {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-fb-group.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-fb-group.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-search {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-search.svg) no-repeat
+    50%;
+  background-size: cover;
+  content: "";
+  height: 16px;
+  margin: 5px 5px;
+  position: absolute;
+  right: 0;
+  width: 16px;
+}
+
+.ladiui.icon-caret-down-fill {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-caret-down-fill.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-caret-down-fill.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-setting-view {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-setting-view.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-setting-view.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-setting-builder {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-setting-builder.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-setting-builder.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-black-list-ip {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/ladipage/icon-black-list.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/ladipage/icon-black-list.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-edit-name-tag {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-edit-name-tag.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-edit-name-tag.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-on-access-key {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-on-access-key.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-on-access-key.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-report-icon {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-report-icon.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-report-icon.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-report-dynamic {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/ladipage/icon-report.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/ladipage/icon-report.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-stop-dynamic {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/ladipage/icon-stop.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/ladipage/icon-stop.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-decentralize {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-decentralize.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-decentralize.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-replication {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-replication.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-replication.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-replication1 {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-replication.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-replication.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-data-backup {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-data-backup.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-data-backup.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-export-html {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-export-html.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-export-html.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-fluent-people-team {
+  pointer-events: none;
+  background-color: #6a7288;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-fluent-people-team.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-fluent-people-team.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-export-ladipage {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-export-ladipage.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-export-ladipage.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-prev {
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-prev.svg) no-repeat
+    50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-prev.svg) no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-pause {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-pause.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-pause.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-delete {
+  pointer-events: none;
+  background-color: var(--danger-color);
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-delete.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-delete.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-delete-black-sz {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-delete.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-delete.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-delete-black {
+  pointer-events: none;
+  background-color: var(--main-default);
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-delete.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-delete.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-da {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-pause.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-pause.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-close {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: var(--status-mute-color);
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-modal-close.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-modal-close.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-warning-alert {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-warning-alert.svg?v=1)
+    no-repeat 50% 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-warning-alert.svg?v=1)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-warning-alert.svg?v=1)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-success-alert {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-access-alert.svg)
+    no-repeat 50% 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-access-alert.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-access-alert.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-info-alert {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-info-alert.svg?v=1)
+    no-repeat 50% 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-info-alert.svg?v=1)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-info-alert.svg?v=1)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-danger-alert {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-delete-alert.svg)
+    no-repeat 50% 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-delete-alert.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-delete-alert.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-warning-alert-white {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-warning-alert-white.svg)
+    no-repeat 50% 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-warning-alert-white.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-warning-alert-white.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-success-alert-white {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-access-alert-white.svg)
+    no-repeat 50% 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-access-alert-white.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-access-alert-white.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-info-alert-white {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-info-alert-white.svg)
+    no-repeat 50% 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-info-alert-white.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-info-alert-white.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-danger-alert-white {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-delete-alert-white.svg)
+    no-repeat 50% 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-delete-alert-white.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-delete-alert-white.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-status-warning {
+  pointer-events: none;
+  background-color: var(--status-warning-color);
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-status-success {
+  pointer-events: none;
+  background-color: var(--status-success-color);
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status1.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status1.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-status-mute {
+  pointer-events: none;
+  background-color: var(--status-mute-color);
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status2.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status2.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-status-danger {
+  pointer-events: none;
+  background-color: var(--danger-color);
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status2.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status2.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-time {
+  pointer-events: none;
+  background-color: var(--status-mute-color);
+  width: 10.5px;
+  height: 10.5px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-time.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-time.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-team-left::before {
+  pointer-events: none;
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-fluent-people-team.svg)
+    no-repeat center;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  content: "";
+  margin-right: 8px;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-fluent-people-team.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-fluent-people-team.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-status-pro {
+  pointer-events: none;
+  background-color: var(--main-white);
+  box-sizing: unset;
+  margin: 2px 0 2px 6px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status-pro.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status-pro.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-status-enterprise {
+  pointer-events: none;
+  background-color: var(--main-white);
+  box-sizing: unset;
+  margin: 2px 0 2px 6px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status-enterprise.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status-enterprise.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-status-premium {
+  pointer-events: none;
+  background-color: var(--main-white);
+  box-sizing: unset;
+  margin: 2px 0 2px 6px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status-premium.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status-premium.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-status-starter {
+  pointer-events: none;
+  background-color: var(--main-white);
+  box-sizing: unset;
+  margin: 2px 0 2px 6px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status-starter.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-status-starter.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-menu-item1 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item1.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item1.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item2 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item2.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item2.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item3 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item3.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item3.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item4 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item4.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item4.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item5 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item5.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item5.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item6 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item6.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item6.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item7 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item7.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item7.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item8 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item8.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item8.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item9 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item9.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item9.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item10 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item10.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item10.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item11 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item11.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item11.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-menu-item12 {
+  pointer-events: none;
+  background-color: var(--main-secondary);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item12.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-menu-item12.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-download-data {
+  pointer-events: none;
+  background-color: var(--main-primary);
+  box-sizing: unset;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-download-data.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-download-data.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-upload-data {
+  pointer-events: none;
+  background-color: var(--main-primary);
+  box-sizing: unset;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-upload-data.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-upload-data.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-list {
+  pointer-events: none;
+  background-color: var(--main-default);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-list.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-list.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-grid {
+  pointer-events: none;
+  background-color: var(--main-black);
+  box-sizing: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-grid.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-grid.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-gmail {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-gmail.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-gmail.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-return {
+  pointer-events: none;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background: var(--status-mute-color);
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-return.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-return.svg) no-repeat
+    50% 50%;
+}
+
+.ladiui.icon-ldp-hide {
+  pointer-events: all;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: var(--status-mute-color);
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-hide.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-hide.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-view {
+  pointer-events: all;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: var(--status-mute-color);
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-view.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-view.svg) no-repeat 50%
+    50%;
+}
+
+.ladiui.icon-ldp-change-position {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: var(--status-mute-color);
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-change-position.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-change-position.svg)
+    no-repeat 50% 50%;
+}
+
+.ladiui.icon-ldp-edit {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: var(--status-mute-color);
+  -webkit-mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-edit.svg)
+    no-repeat 50% 50%;
+  mask: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-edit.svg) no-repeat 50%
+    50%;
+}
+
+:root {
+  --main-primary: #1c00c2;
+  --secondary-color: #f1f3f4;
+  --main-secondary: #6d6d6d;
+  --main-highlight: #ff9632;
+  --danger-color: #d94f45;
+  --info-color: #0f96da;
+  --warning-color: #e89d35;
+  --success-color: #41b983;
+  --main-default: #202020;
+  --main-black: #000;
+  --main-mute: #afafaf;
+  --main-line: #eee;
+  --main-white: #ffffff;
+  --enter-prem-color: #f95d05;
+  --pro-color: #f9c305;
+  --starter-color: #89cc1d;
+  --line-stroke-color: #f1f3f4;
+  --pastel-success-color: rgba(66, 193, 6, 0.05);
+  --pastel-danger-color: rgba(251, 43, 43, 0.05);
+  --pastel-warning-color: rgba(249, 169, 9, 0.05);
+  --pastel-info-color: rgba(101, 195, 248, 0.05);
+  --border-primary-color: #b8daff;
+  --border-secondary-color: #d6d8db;
+  --border-success-color: #e3f8e8;
+  --border-danger-color: #f8d7da;
+  --border-warning-color: #ffeeba;
+  --border-info-color: #bee5eb;
+  --border-light-color: #fdfdfe;
+  --border-default-color: #c6c8ca;
+  --hover-primary: #0137d3;
+  --hover-secondary: #eaeaea;
+  --hover-danger-color: #c3413f;
+  --hover-info-color: #008ec2;
+  --hover-warning-color: #da8818;
+  --hover-success-color: #30a16f;
+  --active-primary: rgba(1, 55, 211, 0.8);
+  --active-secondary: rgba(234, 234, 234, 0.8);
+  --active-danger-color: rgba(195, 65, 63, 0.8);
+  --active-info-color: rgba(0, 142, 194, 0.8);
+  --active-warning-color: rgba(218, 136, 24, 0.8);
+  --active-success-color: rgba(48, 161, 111, 0.8);
+  --disable-primary-color: rgba(1, 55, 211, 0.65);
+  --disable-secondary-color: rgba(234, 234, 234, 0.65);
+  --disable-danger-color: rgba(195, 65, 63, 0.65);
+  --disable-info-color: rgba(0, 142, 194, 0.65);
+  --disable-warning-color: rgba(218, 136, 24, 0.65);
+  --disable-success-color: rgba(48, 161, 111, 0.65);
+  --status-warning-color: #e89d35;
+  --status-success-color: #41b983;
+  --status-mute-color: #727272;
+}
+
+a {
+  cursor: pointer;
+}
+
+.ladiui.white {
+  background-color: var(--main-white) !important;
+}
+
+.ladiui.danger {
+  background-color: var(--danger-color) !important;
+  color: var(--main-white);
+}
+
+.ladiui.info {
+  background-color: var(--info-color) !important;
+  color: var(--main-white);
+}
+
+.ladiui.success {
+  background-color: var(--success-color) !important;
+  color: var(--main-white);
+}
+
+.ladiui.warning {
+  background-color: var(--warning-color) !important;
+  color: var(--main-white);
+}
+
+.ladiui.none-color {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.ladiui.title-text-form-lever1 {
+  display: block;
+  color: var(--main-default);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.ladiui.title-text-form-lever2 {
+  display: block;
+  color: var(--main-default);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.ladiui.title-text-form-lever3 {
+  display: block;
+  color: var(--main-default);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+p {
+  font-weight: medium;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0.15px;
+}
+
+h2 {
+  font-weight: medium;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+span {
+  line-height: 1.5;
+}
+
+textarea {
+  resize: none;
+}
+
+.open-modal {
+  overflow: hidden;
+}
+
+table .ladiui.btn-group {
+  padding: 0;
+}
+
+.ladiui.subtitle-1 {
+  font-weight: medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+.ladiui.subtitle-2 {
+  font-weight: medium;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.ladiui.body-1 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+
+.ladiui.body-2 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+}
+
+.ladiui.body-3 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.ladiui.body-3.text-link {
+  color: var(--main-default);
+}
+
+.ladiui.caption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.25px;
+}
+
+.ladiui.overline {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 1px;
+}
+
+.ladiui.bold {
+  font-weight: 500 !important;
+}
+
+.ladiui.head-question {
+  margin-bottom: 8px;
+}
+
+.ladiui.secondary-text {
+  color: var(--main-secondary);
+}
+
+.ladiui.default-text {
+  color: var(--main-default);
+}
+
+.ladiui.light-text {
+  color: var(--main-white);
+}
+
+.ladiui.primary-text {
+  color: var(--main-primary);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.ladiui.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ladiui.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ladiui.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.ladiui.flex-row-menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ladiui.alert-success h2 {
+  color: var(--success-color);
+  padding-bottom: 4px;
+}
+
+.ladiui.alert-danger h2 {
+  color: var(--danger-color);
+  padding-bottom: 4px;
+}
+
+.ladiui.alert-warning h2 {
+  color: var(--warning-color);
+  padding-bottom: 4px;
+}
+
+.ladiui.alert-info h2 {
+  color: var(--info-color);
+  padding-bottom: 4px;
+}
+
+.ladiui.alert {
+  position: relative;
+  width: 360px;
+  padding: 14px 16px;
+  background-color: transparent;
+  border-radius: 4px;
+  display: flex;
+}
+
+.ladiui.alert-text {
+  margin-top: 6px;
+  max-width: 275px;
+}
+
+.ladiui.alert i {
+  margin-right: 8px;
+}
+
+.ladiui.btn {
+  height: 36px;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 6px 16px;
+  font-weight: medium;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.ladiui.btn-link {
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--main-primary);
+}
+
+.ladiui.btn-primary {
+  background-color: var(--main-primary);
+  color: var(--main-white);
+  border-color: none;
+}
+
+.ladiui.btn-primary.active {
+  background-color: var(--active-primary);
+}
+
+.ladiui.btn-primary.disabled {
+  background-color: var(--disable-primary-color);
+  color: var(--main-white);
+  border: none;
+}
+
+.ladiui.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--main-default);
+  border-color: var(--secondary-color);
+}
+
+.ladiui.btn-secondary.active {
+  background-color: var(--active-secondary);
+}
+
+.ladiui.btn-secondary.disabled {
+  background-color: var(--disable-secondary-color);
+  border: none;
+}
+
+.ladiui.btn-success {
+  background-color: var(--success-color);
+  color: var(--main-white);
+  border-color: var(--success-color);
+}
+
+.ladiui.btn-success.active {
+  background-color: var(--active-success-color);
+}
+
+.ladiui.btn-success.disabled {
+  background-color: var(--disable-success-color);
+  color: var(--main-white);
+  border: none;
+}
+
+.ladiui.btn-danger {
+  background-color: var(--danger-color);
+  color: var(--main-white);
+  border-color: var(--danger-color);
+}
+
+.ladiui.btn-danger.active {
+  background-color: var(--active-danger-color);
+}
+
+.ladiui.btn-danger.disabled {
+  background-color: var(--disable-danger-color);
+  color: var(--main-white);
+  border: none;
+}
+
+.ladiui.btn-warning {
+  background-color: var(--warning-color);
+  color: var(--main-white);
+  border-color: var(--warning-color);
+}
+
+.ladiui.btn-warning.active {
+  background-color: var(--active-warning-color);
+}
+
+.ladiui.btn-warning.disabled {
+  background-color: var(--disable-warning-color);
+  color: var(--main-white);
+  border: none;
+}
+
+.ladiui.btn-info {
+  background-color: var(--info-color);
+  color: var(--main-white);
+  border-color: var(--info-color);
+}
+
+.ladiui.btn-info.active {
+  background-color: var(--active-info-color);
+}
+
+.ladiui.btn-info.disabled {
+  background-color: var(--disable-info-color);
+  color: var(--main-white);
+  border: none;
+}
+
+.ladiui.btn-light {
+  background-color: var(--main-white);
+  color: var(--main-default);
+  border-color: var(--main-white);
+}
+
+.ladiui.btn-dark {
+  background-color: var(--main-default);
+  color: var(--main-white);
+  border-color: var(--main-default);
+}
+
+.ladiui.btn-outline-primary {
+  color: var(--main-primary);
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--main-primary);
+}
+
+.ladiui.btn-link:hover {
+  color: var(--main-default);
+}
+
+.ladiui.btn-outline-primary:hover {
+  color: var(--main-white);
+  background-color: var(--main-primary);
+  border-color: var(--main-primary);
+}
+
+.ladiui.btn-outline-secondary {
+  color: var(--main-default);
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--secondary-color);
+}
+
+.ladiui.btn-outline-secondary:hover {
+  color: var(--main-default);
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.ladiui.btn-outline-success {
+  color: var(--success-color);
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--success-color);
+}
+
+.ladiui.btn-outline-success:hover {
+  color: var(--main-white);
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+.ladiui.btn-outline-danger {
+  color: var(--danger-color);
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--danger-color);
+}
+
+.ladiui.btn-outline-danger:hover {
+  color: var(--main-white);
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.ladiui.btn-outline-warning {
+  color: var(--warning-color);
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--warning-color);
+}
+
+.ladiui.btn-outline-warning:hover {
+  color: var(--main-white);
+  background-color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+.ladiui.btn-outline-info {
+  color: var(--info-color);
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--info-color);
+}
+
+.ladiui.btn-outline-info:hover {
+  color: var(--main-white);
+  background-color: var(--info-color);
+  border-color: var(--info-color);
+}
+
+.ladiui.btn-outline-light {
+  color: var(--main-default);
+  background-color: var(--main-white);
+  background-image: none;
+  border-color: var(--secondary-color);
+}
+
+.ladiui.btn-outline-light:hover {
+  color: var(--main-default);
+  background-color: var(--main-white);
+  border-color: var(--secondary-color);
+}
+
+.ladiui.btn-outline-dark {
+  color: var(--main-default);
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--main-default);
+}
+
+.ladiui.btn-outline-dark:hover {
+  color: var(--main-white);
+  background-color: var(--main-default);
+  border-color: var(--main-default);
+}
+
+.ladiui.btn-lg {
+  height: 36px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 2px;
+}
+
+.ladiui.btn-sm {
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 2px;
+}
+
+.ladiui.btn-primary:hover {
+  color: var(--main-white);
+  background-color: var(--hover-primary);
+}
+
+.ladiui.btn-secondary:hover {
+  color: var(--main-default);
+  background-color: var(--hover-secondary);
+}
+
+.ladiui.btn-success:hover {
+  color: var(--main-white);
+  background-color: var(--hover-success-color);
+}
+
+.ladiui.btn-danger:hover {
+  color: var(--main-white);
+  background-color: var(--hover-danger-color);
+}
+
+.ladiui.btn-warning:hover {
+  color: var(--main-white);
+  background-color: var(--hover-warning-color);
+}
+
+.ladiui.btn-info:hover {
+  color: var(--main-white);
+  background-color: var(--hover-info-color);
+}
+
+.ladiui.btn-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.ladiui.btn-group > .btn:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ladiui.btn-group > .btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-lg,
+.ladiui.btn-group-lg > .btn {
+  padding: 2px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 4.8px;
+}
+
+.btn-sm,
+.ladiui.btn-group-sm > .btn {
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3.2px;
+}
+
+.ladiui button.close {
+  position: absolute;
+  background-color: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+  top: -2px;
+  right: 0;
+  padding: 24px;
+}
+
+.ladiui.card {
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.ladiui.card .list-group-item {
+  border-left: none;
+  border-right: none;
+}
+
+.ladiui.card-header {
+  padding: 8px 20px;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.ladiui.card-body {
+  flex: 1 1 auto;
+  padding: 20px;
+  line-height: 20px;
+}
+
+.ladiui.card-img-top {
+  border-radius: 2px 2px 0 0;
+}
+
+.ladiui.card-title {
+  margin-bottom: 12px;
+}
+
+.ladiui.link {
+  color: var(--main-primary);
+}
+
+.ladiui.link + .ladiui.link {
+  margin-left: 20px;
+}
+
+.ladiui.collapse {
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  overflow: hidden;
+  display: none;
+}
+
+.ladiui.btn.accordion {
+  width: 100%;
+  border-radius: 2px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.ladiui.accordion-content {
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  overflow: hidden;
+}
+
+.ladiui.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: fadeoverlay ease-in 0.2s;
+  z-index: 1073;
+}
+
+.ladiui.modal-close {
+  position: absolute;
+  right: 26px;
+  background-color: inherit;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.ladiui.modal-close:hover i.icon {
+  background: var(--main-secondary) !important;
+}
+
+.ladiui.modal-return {
+  position: absolute;
+  left: 18px;
+  background-color: inherit;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.ladiui.modal-return:hover i.icon {
+  background: var(--main-secondary) !important;
+}
+
+.ladiui.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 60px auto;
+  pointer-events: none;
+}
+
+.ladiui.modal-dialog-scrollable {
+  height: calc(100% - 3.5rem);
+}
+
+.ladiui.modal-dialog-centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: calc(100% - (9rem * 2));
+}
+
+.ladiui.modal.open .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.ladiui.modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.ladiui.modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: var(--main-white);
+  background-clip: padding-box;
+  border-radius: 2px;
+  box-shadow: 0 -1px 38px rgb(0 0 0 / 5%), 0 4px 7px rgb(0 0 0 / 12%);
+  animation: blowUpContent 0.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  outline: 0;
+}
+
+@keyframes blowUpContent {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes blowUpContent2 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+.ladiui.modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: center;
+  padding: 24px 26px 8px;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.ladiui.modal-body {
+  position: relative;
+  flex: 1;
+  padding: 24px 24px 0;
+  margin-bottom: 34px;
+}
+
+.ladiui.modal-body.confirm {
+  margin-bottom: 0;
+  padding: 24px 24px 0;
+}
+
+.ladiui.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 24px;
+}
+
+.ladiui.modal-footer-link {
+  width: 304px;
+  display: flex;
+  align-items: center;
+}
+
+.ladiui.modal-footer-link i {
+  padding: 10px;
+  margin-right: 8px;
+}
+
+.ladiui.footer-modal-btn {
+  display: flex;
+}
+
+.ladiui.modal-footer.confirm {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px;
+}
+
+.ladiui.modal-footer .btn:not(:last-child) {
+  margin-right: 24px;
+}
+
+.ladiui.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.ladiui.modal .modal-dialog {
+  width: 450px;
+}
+
+.ladiui.bd-example-modal-lg .modal-dialog {
+  width: 824px;
+}
+
+.ladiui.bd-example-modal-sm .modal-dialog {
+  width: 298px;
+}
+
+@keyframes fadeoverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeoverlay1 {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.ladiui.title-form {
+  margin-bottom: 8px;
+}
+
+.ladiui.choices-inner {
+  overflow: hidden;
+}
+
+.ladiui.choices-input {
+  vertical-align: baseline;
+  max-width: 100%;
+}
+
+.ladiui.btn-tag-selectable {
+  cursor: pointer;
+}
+
+.ladiui.choices-list-multiple {
+  display: inline;
+}
+
+.ladiui.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ladiui.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ladiui.flex {
+  display: flex;
+  align-items: center;
+}
+
+.ladiui.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.ladiui.form-control {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--main-black);
+  background-color: var(--main-white);
+  background-clip: padding-box;
+  border: 1px solid var(--main-line);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+}
+
+.ladiui.form-control:disabled {
+  color: var(--main-secondary);
+  pointer-events: none;
+  cursor: default;
+}
+
+button[disabled],
+input[disabled],
+textarea[disabled] {
+  background-color: var(--main-line);
+  color: var(--main-secondary);
+}
+
+.disabled {
+  color: var(--main-secondary);
+  pointer-events: none;
+  cursor: default;
+}
+
+.ladiui.form-control1 {
+  display: block;
+  width: 100%;
+  padding: 4px 6px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--main-black);
+  background-color: var(--main-white);
+  background-clip: padding-box;
+  border: 1px solid var(--main-line);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 2px;
+}
+
+.ladiui.form-control:hover {
+  border-color: var(--hover-secondary);
+}
+
+.ladiui.form-control:focus {
+  border: 1px solid var(--main-primary);
+}
+
+.ladiui.form-group {
+  margin-top: 24px;
+}
+
+.ladiui.flex-between.tow {
+  margin-top: 16px;
+}
+
+.ladiui.btn-group.col-1,
+.ladiui.dropdown-menu.col-1,
+.ladiui.dropdown-toggle.col-1 {
+  width: 196px !important;
+}
+
+.ladiui.btn-group.col-2 {
+  width: 280px !important;
+}
+
+.ladiui.dropdown-menu.col-2,
+.ladiui.dropdown-toggle.col-2 {
+  width: 280px !important;
+  margin-left: 16px;
+}
+
+.ladiui.modal-dialog.custom-popups-width {
+  width: 824px;
+}
+
+.ladiui.item {
+  margin-top: 28px;
+}
+
+.ladiui.itemss {
+  margin-top: 16px;
+  justify-content: space-between;
+}
+
+.ladiui.custom-bg-form {
+  justify-content: space-between;
+}
+
+.ladiui.sub-custom {
+  margin-top: 12px;
+}
+
+.ladiui.sub-customI {
+  margin-right: 10px;
+}
+
+.ladiui.text-sub-custom {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--main-default);
+}
+
+.ladiui.btn-group.custom-form {
+  margin: 0 24px 0 0;
+}
+
+.ladiui.form-group-custom.top-fix {
+  margin-top: 16px;
+}
+
+.ladiui.form-control1.top-fix {
+  width: 600px;
+}
+
+.ladiui.text-sm-sub {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--main-default);
+  margin-top: 24px;
+}
+
+.ladiui.item.bg-form {
+  background-color: rgb(24, 82, 250, 0.05);
+  margin-top: 32px;
+  border-radius: 5px;
+}
+
+.ladiui.item.bg-form-sub {
+  margin: 16px;
+}
+
+.ladiui.btn-group.col-1.right {
+  margin-left: 16px;
+}
+
+.ladiui.proviso {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0 12px 0;
+}
+
+.ladiui.position img {
+  margin: 0 8px 0 0;
+}
+
+.ladiui.item-forms {
+  margin: 8px 0 0 0;
+}
+
+.ladiui.searching-option {
+  box-shadow: 0 -1px 38px rgb(0 0 0 / 5%),
+    0 4px 7px rgb(0 0 0 / 12%) var(--hover-secondary);
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ladiui.searching-option li a {
+  margin-top: -1px;
+  background-color: var(--main-white);
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  display: block;
+}
+
+.ladiui.searching-option li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.ladiui.search-field {
+  display: block;
+  height: 36px;
+  padding-left: 15px;
+  color: var(--main-black);
+  background-color: var(--main-white);
+  background-clip: padding-box;
+  border: 1px solid var(--secondary-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+}
+
+.ladiui.search-group {
+  position: relative;
+  min-width: 170px;
+}
+
+.ladiui.search-group .dropdown-menu {
+  min-width: 170px;
+}
+
+.ladiui.search-group i {
+  cursor: pointer;
+  pointer-events: all;
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  color: var(--main-secondary);
+}
+
+.ladiui.tag-form {
+  margin-top: 16px;
+}
+
+.ladiui.form-check-inputs {
+  margin-top: 16px;
+}
+
+.ladiui.span-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.ladiui.span-text:first-child {
+  margin-left: 0;
+}
+
+.ladiui.radio {
+  margin-top: 18px;
+}
+
+.ladiui.input-numbers {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ladiui.input-numbers label {
+  margin-bottom: 16px;
+}
+
+.ladiui.btn-submit {
+  text-align: right;
+}
+
+.ladiui.form-switch {
+  margin-bottom: 46px;
+}
+
+.ladiui.password-input {
+  position: relative;
+}
+
+.ladiui.password-input i {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.ladiui.password-input i:hover {
+  background: var(--main-secondary);
+}
+
+.ladiui.switch.sw-lg {
+  width: 44px;
+  height: 22px;
+  padding-bottom: 10px;
+}
+
+.ladiui.switch.sw-lg input {
+  margin-left: 5px;
+}
+
+.ladiui.sw-lg .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--main-mute);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.ladiui.sw-lg .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  top: 2px;
+  background-color: var(--main-white);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .sw-lg .slider {
+  background-color: var(--main-primary);
+}
+
+input:checked + .ladiui.sw-lg.slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+.ladiui.switch.sw-sm {
+  width: 16px;
+  height: 10px;
+  padding-bottom: 10px;
+}
+
+.ladiui.switch.sw-sm input {
+  margin-left: 5px;
+}
+
+.ladiui.sw-sm .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--main-mute);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.ladiui.sw-sm .slider:before {
+  position: absolute;
+  content: "";
+  height: 6px;
+  width: 6px;
+  left: 2px;
+  bottom: 2px;
+  top: 2px;
+  background-color: var(--main-white);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .sw-sm .slider {
+  background-color: var(--main-primary);
+}
+
+input:checked + .ladiui.sw-sm.slider:before {
+  -webkit-transform: translateX(6px);
+  -ms-transform: translateX(6px);
+  transform: translateX(6px);
+}
+
+.ladiui.switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 16px;
+  flex-direction: column;
+  margin: 12px;
+}
+
+.ladiui.switch input {
+  margin-left: 10px;
+  height: 1px;
+}
+
+.ladiui.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--main-mute);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.ladiui.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  top: 2px;
+  background-color: var(--main-white);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .ladiui.slider {
+  background-color: var(--main-primary);
+}
+
+input:checked + .ladiui.slider:before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+.form-check-input {
+  cursor: pointer;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0 8px 0 0;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  transition: 0.5s;
+  border: 1px solid var(--main-mute);
+}
+
+.form-check-input-checkbox {
+  -webkit-appearance: none;
+  position: relative;
+  width: 16px;
+  border-radius: 2px;
+  height: 16px;
+  transition: 0.5s;
+  border: 1px solid var(--main-mute);
+  cursor: pointer;
+}
+
+.form-check-input.one {
+  margin: 0 8px 0 0;
+}
+
+.ladiui.radio {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-check-input:checked {
+  animation: fanimate 7s;
+  border: 1px solid var(--main-primary);
+}
+
+.form-check-input-checkbox:checked {
+  animation: fanimate 7s;
+  border: 1px solid var(--main-mute);
+}
+
+.form-check-input::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-white);
+}
+
+.form-check-input-checkbox::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-white);
+}
+
+.form-check-input:checked::before {
+  content: "";
+  position: absolute;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  background-color: var(--main-primary);
+  border-radius: 50%;
+  top: 3px;
+  right: 3px;
+}
+
+.form-check-input-checkbox:checked {
+  background-color: var(--main-primary);
+  border: 1px solid var(--main-primary);
+}
+
+.form-check-input-checkbox:checked::before {
+  content: "";
+  position: absolute;
+  align-items: center;
+  top: 5.63px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  border: solid var(--main-white);
+  border-width: 0 1.5px 1.5px 0;
+  border-radius: 1px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+@keyframes fanimate {
+  0% {
+    box-shadow: 0 0 0 0 #d4daee;
+  }
+
+  12% {
+    box-shadow: 0 0 0 6px rgba(255, 109, 74, 0);
+  }
+
+  80% {
+    box-shadow: 0 0 0 4px rgba(255, 109, 74, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 109, 74, 0);
+  }
+}
+
+.ladiui.slider.round {
+  border-radius: 20px;
+}
+
+.ladiui.slider.round:before {
+  border-radius: 100%;
+}
+
+.ladiui.nav-tabs {
+  border-bottom: 1px solid var(--main-line);
+}
+
+.ladiui.nav-tabs .tab-link {
+  margin-bottom: -1px;
+}
+
+.ladiui.tab-pane {
+  margin-top: 8px;
+  display: none;
+}
+
+.ladiui.vertical-tab {
+  display: flex;
+}
+
+.ladiui.vertical.nav-tabs {
+  border-right: 1px solid var(--main-line);
+  border-bottom: none;
+}
+
+.ladiui.vertical.nav-tabs .tab-link {
+  margin-right: -1px;
+  background: 0 0;
+  border-bottom: none;
+}
+
+.ladiui.vertical .tab-pane {
+  margin-left: 8px;
+  display: none;
+}
+
+.ladiui.vertical .tab-content {
+  display: none;
+}
+
+.ladiui.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.ladiui.tab-link {
+  padding-bottom: 8px;
+  background-color: var(--main-white);
+  cursor: pointer;
+  display: block;
+}
+
+.ladiui.nav-item {
+  margin: 0 12px;
+}
+
+.ladiui.nav-item:first-child {
+  margin-left: 0;
+}
+
+.ladiui.nav-item:last-child {
+  margin-right: 0;
+}
+
+.ladiui.tab-link.active {
+  color: var(--main-primary);
+  border-bottom: 3px solid var(--main-primary);
+}
+
+.ladiui.tab-link:hover {
+  color: var(--main-primary);
+}
+
+.ladiui.nav.vertical {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.ladiui.vertical .tab-link.active {
+  color: var(--main-primary);
+  border-right: 3px solid var(--main-primary);
+}
+
+.ladiui.vertical .tab-link {
+  min-width: 100px;
+  padding: 5px 24px 5px 0;
+  margin-right: 0;
+  margin-bottom: 24px;
+  background-color: var(--main-white);
+  cursor: pointer;
+}
+
+.ladiui.vertical .nav-item {
+  margin: 8px 0;
+  min-width: 40px;
+}
+
+.ladiui.vertical .nav-item:first-child {
+  margin: 0 0 8px 0;
+}
+
+.ladiui.vertical .nav-item:last-child {
+  margin: 8px 0 0 0;
+}
+
+.ladiui.list-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ladiui.list-group-item {
+  position: relative;
+  display: block;
+  padding: 12px 20px;
+  margin-bottom: -1px;
+  background-color: var(--main-white);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.ladiui.select-search.dropdown .dropdown-menu {
+  min-width: 251px;
+}
+
+.ladiui.select-search.dropdown .ladiui-btn-tag {
+  position: absolute;
+  right: 50px;
+  display: none;
+}
+
+.ladiui.select-search.dropdown .search-group {
+  margin: 16px;
+}
+
+.ladiui.select-search .btn {
+  box-sizing: border-box;
+  min-width: 150px;
+  max-width: 320px;
+  text-overflow: ellipsis;
+}
+
+.ladi-selected-remove-all {
+  position: absolute;
+  right: 28px;
+  display: none;
+  margin-bottom: 2px;
+}
+
+.ladiui.select-search .dropdown-text {
+  max-width: 180px;
+  padding-right: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ladiui.dropdown-menu label {
+  position: relative;
+  color: var(--main-black);
+  word-wrap: break-word;
+  padding: 12px 16px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: block;
+  align-items: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
+.ladiui.ul-checked {
+  position: relative;
+}
+
+.ladiui.ul-checked li:first-child {
+  border-bottom: 1px solid var(--main-line);
+}
+
+.ladiui.ul-checked li:last-child {
+  border-bottom: none;
+}
+
+.ladiui.dropdown-menu label input {
+  margin-right: 10px;
+}
+
+.ladiui.ul-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 85%;
+  height: 1px;
+  justify-content: center;
+  margin: 0 6%;
+}
+
+.ladiui.dropdown {
+  position: relative;
+}
+
+.ladiui.dropdown-menu label:hover {
+  background-color: var(--secondary-color);
+}
+
+.ladiui.dropdown-menu {
+  margin-top: 0;
+  padding: 10px 0;
+  display: none;
+  position: absolute;
+  min-width: 150px;
+  background-color: var(--main-white);
+  box-shadow: 0 -1px 38px rgb(0 0 0 / 5%), 0 4px 7px rgb(0 0 0 / 12%);
+  z-index: 900000090;
+  animation: fadedropdown ease-in-out 0.15s;
+  transition: height 0.15s;
+  width: 100%;
+}
+
+.ladiui.dropdown-menu.dropup {
+  animation: fadedropup ease-in-out 0.15s;
+}
+
+.ladiui.dropdown-outside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: fadeoverlay ease-in 0.2s;
+  z-index: 0;
+}
+
+.ladiui.dropdown-menu.custom-dropdown-menu {
+  position: absolute;
+  right: 0;
+  margin-top: 2px;
+  padding: 10px 0;
+  display: none;
+  min-width: 200px;
+  background-color: var(--main-white);
+  overflow: auto;
+  box-shadow: 0 -1px 38px rgb(0 0 0 / 5%), 0 4px 7px rgb(0 0 0 / 12%);
+  z-index: 1;
+  animation: fadedropdown ease-in-out 0.15s;
+}
+
+.ladiui.dropdown-menu-item {
+  vertical-align: middle;
+}
+
+.ladiui.dropdown-item {
+  font-size: 14px;
+  position: relative;
+  color: var(--main-black);
+  word-wrap: break-word;
+  padding: 8px 16px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: block;
+  vertical-align: middle;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.ladiui.dropdown-item i {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.ladiui .dropdown-item:hover {
+  background-color: var(--main-line);
+}
+
+.ladiui.dropdown-toggle:focus {
+  border: 1px solid var(--main-primary);
+}
+
+.ladiui.dropdown-toggle {
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.ladiui.dropdown-text {
+  margin-right: 50px;
+}
+
+.ladiui.dropdown-toggle::after {
+  content: "";
+  background: url(https://w.ladicdn.com/ladiui/icons/icon-ldp-caret-down-fill.svg)
+    no-repeat center;
+  width: 8px;
+  height: 8px;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 14px 14px 14px 16px;
+}
+
+.ladiui.dropdown-toggle.basic {
+  display: inline-table;
+  min-width: initial;
+}
+
+.ladiui.dropdown-toggle.basic:after {
+  display: none;
+}
+
+.ladiui.select-dropdown .icon {
+  margin-right: 8px;
+}
+
+.ladiui.dropdown-text {
+  pointer-events: none;
+  text-align: left;
+}
+
+.ladiui.select-dropdown {
+  color: var(--main-secondary);
+  text-align: left;
+}
+
+@keyframes fadedropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeclosedropdown {
+  from {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes fadedropup {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+.ladiui.disabled {
+  color: var(--main-mute);
+  pointer-events: none;
+  cursor: default;
+}
+
+.ladiui.open {
+  display: block !important;
+}
+
+.ladiui.page-container {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  background-color: var(--main-white);
+  border-radius: 5px;
+  min-height: 32px;
+}
+
+.ladiui.page-container button {
+  cursor: pointer;
+  background-color: var(--main-white);
+  border: none;
+  vertical-align: middle;
+}
+
+.ladiui.page-container button img {
+  margin: 5px 0 5px 0;
+  color: var(--main-default);
+  vertical-align: middle;
+}
+
+.ladiui.page-container a {
+  padding: 2px 8px 2px 8px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 4px;
+  text-decoration: none;
+  vertical-align: middle;
+  color: var(--main-default);
+}
+
+.ladiui.prev-page {
+  margin-right: 12px;
+}
+
+.ladiui.next-page {
+  margin-left: 12px;
+}
+
+.ladiui.page-container a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.ladiui.dot {
+  margin: 12px;
+}
+
+.ladiui-tooltip {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext.top {
+  visibility: hidden;
+  border-radius: 2px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 900000090;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  line-height: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip .tooltiptext.top::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+}
+
+.tooltip .tooltiptext.top::before {
+  content: attr(tooltiptext);
+  position: absolute;
+  top: -7px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 5px 10px;
+  min-width: 20px;
+  max-width: 200px;
+  margin: auto;
+  width: max-content;
+  text-align: center;
+  transform: translateX(0) translateY(-100%);
+  word-break: break-all;
+  border-radius: 2px;
+}
+
+.tooltip .tooltiptext.bottom {
+  visibility: hidden;
+  border-radius: 2px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 900000090;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  line-height: 20px;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.tooltip .tooltiptext.bottom::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 13px;
+  margin-left: -7px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #000 transparent;
+}
+
+.tooltip .tooltiptext.bottom::before {
+  content: attr(tooltiptext);
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 5px 10px;
+  min-width: 20px;
+  max-width: 200px;
+  margin: auto;
+  width: max-content;
+  text-align: center;
+  transform: translateX(0) translateY(100%);
+  word-break: break-all;
+  border-radius: 2px;
+}
+
+.tooltip .tooltiptext.left {
+  visibility: hidden;
+  border-radius: 2px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 900000090;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  line-height: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip .tooltiptext.left::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -7px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #000;
+}
+
+.tooltip .tooltiptext.left::before {
+  content: attr(tooltiptext);
+  position: absolute;
+  top: 0;
+  left: -6px;
+  background: #000;
+  color: #fff;
+  padding: 5px 10px;
+  min-width: 20px;
+  max-width: 200px;
+  margin: auto;
+  width: max-content;
+  text-align: center;
+  transform: translateX(-100%) translateY(0);
+  word-break: break-all;
+  border-radius: 2px;
+}
+
+.tooltip .tooltiptext.right {
+  visibility: hidden;
+  border-radius: 2px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 900000090;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  line-height: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip .tooltiptext.right::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -7px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #000 transparent transparent;
+}
+
+.tooltip .tooltiptext.right::before {
+  content: attr(tooltiptext);
+  position: absolute;
+  right: -6px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: 5px 10px;
+  min-width: 20px;
+  max-width: 200px;
+  margin: auto;
+  width: max-content;
+  text-align: center;
+  transform: translateX(100%) translateY(0);
+  word-break: break-all;
+  border-radius: 1px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.toast-top-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9000;
+  box-shadow: 0 -1px 38px rgb(0 0 0 / 5%), 0 4px 7px rgb(0 0 0 / 12%);
+  transform-origin: right;
+  -webkit-animation: notify 0.5s;
+  animation: notify 0.5s;
+}
+
+.toast-top-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  box-shadow: 0 -1px 38px rgb(0 0 0 / 5%), 0 4px 7px rgb(0 0 0 / 12%);
+  transform-origin: left;
+  -webkit-animation: notifys 0.5s;
+  animation: notifys 0.5s;
+}
+
+.toast-bottom-right {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9000;
+  box-shadow: 0 -1px 38px rgb(0 0 0 / 5%), 0 4px 7px rgb(0 0 0 / 12%);
+  transform-origin: right;
+  -webkit-animation: notify 0.5s;
+  animation: notify 0.5s;
+}
+
+.toast-bottom-left {
+  position: fixed;
+  bottom: 14px;
+  left: 14px;
+  z-index: 9999;
+  box-shadow: 0 -1px 38px rgb(0 0 0 / 5%), 0 4px 7px rgb(0 0 0 / 12%);
+  transform-origin: left;
+  -webkit-animation: notifys 0.5s;
+  animation: notifys 0.5s;
+}
+
+@-webkit-keyframes notify {
+  0% {
+    right: -360px;
+    opacity: 0;
+  }
+
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes notifys {
+  0% {
+    left: -360px;
+    opacity: 0;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.ladiui.align-left {
+  text-align: left;
+}
+
+.ladiui.align-right {
+  text-align: right;
+}
+
+.ladiui.align-center {
+  text-align: center;
+}
+
+.ladiui.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ladiui.link a {
+  color: var(--main-primary);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.ladiui.table-vertical th {
+  vertical-align: middle;
+  color: var(--main-default);
+  padding: 12px 0;
+}
+
+.ladiui.table-vertical td {
+  vertical-align: middle;
+  color: var(--main-default);
+  padding: 12px 0;
+}
+
+table.ladiui {
+  font-size: 14px;
+  line-height: 20px;
+  width: 100%;
+}
+
+.ladiui.table-vertical {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+table.ladiui > thead > tr > th {
+  font-weight: 500;
+}
+
+.ladiui.icon-ldp-status-warning {
+  margin-right: 8px;
+}
+
+.ladiui.icon-ldp-status-success {
+  margin-right: 8px;
+}
+
+.ladiui.icon-ldp-status-mute {
+  margin-right: 8px;
+}
+
+.ladiui.icon-ldp-status-danger {
+  margin-right: 8px;
+}
+
+.ladiui.text-time {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--main-secondary);
+  margin-left: 8px;
+}
+
+.ladiui-btn-dropdown.dropdown-toggle {
+  background: 0 0;
+  cursor: pointer;
+}
+
+.ladiui-btn-tag:first-child {
+  margin: 0;
+}
+
+.ladiui-btn-tag {
+  display: inline-block;
+  min-width: 10px;
+  padding: 2px 8px 2px 8px;
+  border-radius: 2px;
+  margin-left: 6px;
+  background-color: var(--main-line);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.ladiui-btn-tag-X {
+  width: 141px;
+  padding: 2px 8px 2px 8px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background-color: var(--main-line);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ladiui.span-img {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.ladiui.status-pro {
+  background-color: var(--pro-color);
+  width: 41px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.ladiui.status-enterprise {
+  background-color: var(--enter-prem-color);
+  width: 69px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.ladiui.status-premium {
+  background-color: var(--enter-prem-color);
+  width: 64px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.ladiui.status-starter {
+  background-color: var(--starter-color);
+  width: 55px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.ladiui.status-text {
+  color: var(--main-white);
+  box-sizing: unset;
+  margin: 2px 6px 2px 4px;
+  font-size: 9px;
+  line-height: 10px;
+  align-items: center;
+}
+
+.ladiui.proviso {
+  min-width: 200px;
+  color: var(--main-primary);
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.ladiui.proviso img {
+  margin: 0 8px 0 0;
+}
+
+.ladiui.proviso-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.ladiui.upload-file {
+  width: 129px;
+  height: 100%;
+}
+
+.ladiui.download-file {
+  width: 132px;
+  height: 100%;
+}
+
+.ladiui.file-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#file-uploader {
+  display: none;
+}
+
+.ladiui.icon-upload-data:hover {
+  background-color: var(--main-white);
+}
+
+.ladiui.btn.download-file,
+.ladiui.btn.upload-file {
+  padding: 0;
+}
+
+.ladiui.icon-download-data,
+.ladiui.icon-upload-data {
+  padding: 7px 8px 7px 10px;
+}
+
+.ladiui.input-number {
+  width: 15%;
+  padding: 5px;
+  border-radius: 2px;
+  border: 1px solid var(--main-primary);
+}
+
+.ladiui.skeleton {
+  display: table;
+  width: 100%;
+}
+
+.ladiui.skeleton-content {
+  display: table-cell;
+  width: 100%;
+  vertical-align: top;
+}
+
+.ladiui.skeleton-content .skeleton-title {
+  width: 100%;
+  height: 16px;
+  margin-top: 16px;
+  background: rgba(190, 190, 190, 0.2);
+  border-radius: 4px;
+}
+
+.ladiui.skeleton-paragraph {
+  width: 100%;
+}
+
+.ladiui.skeleton.skeleton-active
+  .ladiui.skeleton-content
+  .ladiui.skeleton-title,
+.ladiui.skeleton.skeleton-active .skeleton-content .skeleton-paragraph > li {
+  background: linear-gradient(
+    90deg,
+    rgba(190, 190, 190, 0.2) 25%,
+    rgba(129, 129, 129, 0.24) 37%,
+    rgba(190, 190, 190, 0.2) 63%
+  );
+  background-size: 400% 100%;
+  -webkit-animation: skeleton-loading 1.4s linear infinite;
+  animation: skeleton-loading 1.4s ease infinite;
+}
+
+.ladiui.skeleton-content .skeleton-title + .skeleton-paragraph {
+  margin-top: 24px;
+}
+
+.ladiui.skeleton-content .skeleton-paragraph > li {
+  width: 100%;
+  height: 16px;
+  list-style: none;
+  background: rgba(190, 190, 190, 0.2);
+  border-radius: 4px;
+}
+
+.ladiui.skeleton-content .skeleton-paragraph > li + li {
+  margin-top: 16px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0;
+  }
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ladiui.flex-between {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.builder-input-error {
+  border: 1px solid var(--danger-color) !important;
+}
+
+.builder-input-message {
+  max-width: 300px;
+  background: var(--main-white);
+  box-shadow: 0 -1px 38px rgb(0 0 0 / 5%), 0 4px 7px rgb(0 0 0 / 12%);
+  position: absolute;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 5px 10px;
+  z-index: 90000060;
+  margin-top: 7px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  opacity: 0;
+  transition: opacity 50ms ease-in-out;
+}
+
+.builder-input-message:before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 10px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid var(--main-white);
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+button,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+input,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+select,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+textarea,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: middle;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 // @charset "UTF-8";
 a,
@@ -13841,7 +17546,6 @@ body.transparent-scroll .builder-editor::-webkit-scrollbar-thumb {
 }
 
 .builder-shortcut-all-element {
-  display: none;
   position: fixed;
   z-index: 90000091;
   user-select: none;
@@ -19413,3 +23117,5 @@ color-preset {
   width: 28px !important;
   height: 28px !important;
 }
+
+// add css

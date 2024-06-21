@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { QUICK_EDITOR_HEIGHT } from '@constants/init-value';
 import { IElement, IElementDevice } from '@models/element.model';
-import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { pxToNumner } from '@shares/plusPxWithNumber';
 import { getElement } from '@shares/utility';
@@ -22,11 +22,9 @@ import {
   updateTypeColor,
 } from './builder.actions';
 import { elementSelectedId, selectIdFirebase } from './builder.selector';
-import {
-  AngularFirestore,
-  AngularFirestoreDocument,
-} from '@angular/fire/compat/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ILandingFirebaseItem } from '@models/app.model';
+import { concatLatestFrom } from '@ngrx/operators';
 
 @Injectable()
 export class BuilderEffect {

@@ -3,7 +3,7 @@ import { DEVICE, RESIZE_ENUM } from '@constants/enum';
 import { INDEX_START, QUICK_EDITOR_HEIGHT } from '@constants/init-value';
 import { IDemension, ILandingFirebaseItem } from '@models/app.model';
 import { IElement, IElementDevice } from '@models/element.model';
-import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { plusPx } from '@shares/plusPxWithNumber';
 import {
@@ -32,7 +32,7 @@ import {
   updateQuickEditorState,
 } from '@states/builder';
 import { selectDevice, selectMenu } from '@states/menu';
-import { finalize, map, switchMap, take, tap } from 'rxjs';
+import { finalize, map, switchMap, take, tap, timeout } from 'rxjs';
 import {
   actionNoop,
   handleMouseMoveSelect,
@@ -79,6 +79,7 @@ import {
   IListItemInSnap,
   IListItemSnapBinding,
 } from './source.state';
+import { concatLatestFrom } from '@ngrx/operators';
 
 @Injectable()
 export class SourceEffect {
@@ -373,6 +374,7 @@ export class SourceEffect {
             )
             .valueChanges()
             .pipe(
+              timeout(5000),
               take(1),
               finalize(() =>
                 this.store.dispatch(
